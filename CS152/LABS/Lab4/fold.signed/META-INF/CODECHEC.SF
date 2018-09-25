@@ -1,0 +1,18 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: Dv0zweFjJQfg73oFWvkfOSSDWGLuR
+ 9/TDMyVcB2xMiQ=
+SHA-256-Digest-Manifest: jE+lpQaXdcT4FmTOtVUJ0+4qp/uTE6FPMtvHYJogRfQ=
+Created-By: 1.8.0_181 (Oracle Corporation)
+
+Name: fold.rkt
+SHA-256-Digest: gN7aiQZAknR2acyJ/2zD0wcmrOVhapL6shj8bv3xLYQ=
+
+Name: codecheck.log
+SHA-256-Digest: LcyoOSGTDqXALSzaJMVrZvA22yhgq9Dl8KNss3fyz2o=
+
+Name: report.html
+SHA-256-Digest: HKkT8I8yaRg+D/Ck6YeObPS2Rc5ma4ObGdhl6iy8LzA=
+
+Name: codecheck.out
+SHA-256-Digest: b52xXFI58Bk2vYsOBFW4SeAtUihwAfI35pqcs+KFu0w=
+

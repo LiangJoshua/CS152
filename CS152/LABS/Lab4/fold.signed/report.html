@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="/tmp/codecheck/18091110213095415048648575868"/>
+<meta name="Time" content="2018-09-11T10:21:16Z"/>
+<meta name="ID" content="fold"/>
+<meta name="User" content="1808222252eio3zoroy6j2cekgtjk2ekwzi"/>
+<meta name="Problem" content="ext/1809050415bz5apravx7epl8hvea2afirav"/>
+<meta name="Elapsed" content="5802 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header call">Calling with Arguments</p>
+<div class="call">
+<table class="run">
+<tr><th>&#160;</th><th>Name</th><th>Arguments</th><th>Actual</th><th>Expected</th></tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>sumofsquares1</pre></td>
+<td><pre>'(1 2 3)</pre></td>
+<td><pre>14</pre></td>
+<td><pre>14</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>sumofsquares1</pre></td>
+<td><pre>'(9 -6 4)</pre></td>
+<td><pre>133</pre></td>
+<td><pre>133</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>sumofsquares1</pre></td>
+<td><pre>'()</pre></td>
+<td><pre>0</pre></td>
+<td><pre>0</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>sumofsquares2</pre></td>
+<td><pre>'(1 2 3)</pre></td>
+<td><pre>14</pre></td>
+<td><pre>14</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>sumofsquares2</pre></td>
+<td><pre>'(0 6 -1)</pre></td>
+<td><pre>37</pre></td>
+<td><pre>37</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>sumofsquares2</pre></td>
+<td><pre>'()</pre></td>
+<td><pre>0</pre></td>
+<td><pre>0</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>join-strings</pre></td>
+<td><pre>'() " "</pre></td>
+<td><pre>""</pre></td>
+<td><pre>""</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>join-strings</pre></td>
+<td><pre>'("hi" "you" "all") " "</pre></td>
+<td><pre>"hi you all"</pre></td>
+<td><pre>"hi you all"</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>join-strings</pre></td>
+<td><pre>'("" "617" "555" "6792") "-"</pre></td>
+<td><pre>"617-555-6792"</pre></td>
+<td><pre>"617-555-6792"</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>join-strings</pre></td>
+<td><pre>'("solo") "-"</pre></td>
+<td><pre>"solo"</pre></td>
+<td><pre>"solo"</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>make-html-tags</pre></td>
+<td><pre>'("header" "title")</pre></td>
+<td><pre>"&lt;header&gt;&lt;title&gt;&lt;/title&gt;&lt;/header&gt;"</pre></td>
+<td><pre>"&lt;header&gt;&lt;title&gt;&lt;/title&gt;&lt;/header&gt;"</pre></td>
+</tr>
+<tr><td><span class="pass">pass </span></td>
+<td><pre>make-html-tags</pre></td>
+<td><pre>'("body" "div" "table" "tr" "td")</pre></td>
+<td><pre>"&lt;body&gt;&lt;div&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/body&gt;"</pre></td>
+<td><pre>"&lt;body&gt;&lt;div&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/body&gt;"</pre></td>
+</tr>
+</table>
+</div>
+<p class="header studentFiles">Submitted files</p>
+<div class="studentFiles">
+<p class="caption">fold.rkt:</p>
+<pre>#lang racket
+(provide sumofsquares1 sumofsquares2 join-strings make-html-tags)
+
+;; Given a list of numbers, produce the sum of their squares. 
+;; Use foldr, not recursion.
+(define (sumofsquares1 lst)
+  (foldr
+   (lambda (x y) (+ (sqr x) y)) 
+  0 
+   lst)
+)
+
+;; Repeat with foldl
+(define (sumofsquares2 lst)
+  (foldl
+   (lambda (x y) (+ (sqr x) y)) 
+  0 
+   lst)
+  )
+
+;; Using foldl, combine a list of strings into a single string,
+;; separated by the specified separator.  Separators should only
+;; appear between words
+(define (join-strings list-of-strings separator)
+  (foldl
+   (lambda (x y) 
+   (if (equal? y "") (string-append y x)
+   (string-append y separator x)))
+  ""
+   list-of-strings)
+)
+
+;; Make matching open and close tags, using the list of tag-names
+(define (make-html-tags tag-names)
+  (string-append
+   (foldl
+    (lambda ( x y) 
+  
+    (string-append y "&lt;" x "&gt;"))
+    ""
+    tag-names)
+   (foldr
+    (lambda ( x y) 
+    (string-append y "&lt;" "/" x "&gt;"))
+    ""
+    tag-names))
+)
+      
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">12/12</p>
+</div>
+<div class="footnotes"><div class="footnote">2018-09-11T10:21:16Z</div>
+</div>
+</body></html>

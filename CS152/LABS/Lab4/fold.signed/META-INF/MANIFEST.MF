@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0_181 (Oracle Corporation)
+
+Name: fold.rkt
+SHA-256-Digest: hSOe+8ehkqI0YvO7LdtKxDB4QcU66oiyJ+cut3iIWrQ=
+
+Name: codecheck.log
+SHA-256-Digest: LJSOljfBysbHuT/8lA14FvLqvLib2F0SN/k8VFDQmbw=
+
+Name: report.html
+SHA-256-Digest: DSIBRk41vPUjWLC0NrfkCsnWCdhFquQH8Fe6euPiJbE=
+
+Name: codecheck.out
+SHA-256-Digest: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+

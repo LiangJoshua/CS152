@@ -1,0 +1,8 @@
+#lang racket
+(define (largest-elem lst)
+  (cond
+    [(empty? lst) (error "list is empty")]
+    [(< (car lst) (cadr lst)) (larst-elem (cdr lst))]
+    (else largest-elm ((cons (car lst) (cddr lst))))))
+           
+                  

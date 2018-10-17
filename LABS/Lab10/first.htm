@@ -1,0 +1,21 @@
+<html>
+<!--
+Note that there are an increasing number of events.
+See Mozilla Developer Network (MDN) for more details.
+
+<input type='button' onclick='alert("Hello!");' value='Say hi' />
+-->
+<input id='thebutton' type='button' value='Say hi' />
+<script>
+  var button = document.getElementById('thebutton');
+  //button.onclick = function() {
+  //  alert('solid');
+  //};
+  function sayGroovy() {
+    alert('groovy');
+    button.removeEventListener('click', sayGroovy);
+  }
+  button.addEventListener('click', sayGroovy);
+</script>
+</html>
+

@@ -5,5 +5,5 @@ function Rabbit(name) {
 }
 var r = new Rabbit("Python");
 
-console.log(r.name);  // ERROR!!!
-console.log(name);    // Prints "Python"
+console.log(r.name);  //Python
+console.log(name);    //Monty

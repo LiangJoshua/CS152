@@ -4,7 +4,7 @@ var Rabbit = /** @class */ (function () {
     }
     return Rabbit;
 }());
-name: string = "Monty";
 var r = new Rabbit("Python");
+var nam = "Monty";
 console.log(r.name); // ERROR!!!
 console.log(name); // Prints "Python"

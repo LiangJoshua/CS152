@@ -4,8 +4,8 @@ class Rabbit {
 		this.name = name;
 	}
 }
-var name: string = "Monty";
-var r = new Rabbit("Python");
 
-console.log(r.name);  // ERROR!!!
+var r = new Rabbit("Python");
+var nam = "Monty";
+console.log(r.name);  //Python
 console.log(name);    // Prints "Python"

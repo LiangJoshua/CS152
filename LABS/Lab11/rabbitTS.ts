@@ -6,6 +6,6 @@ class Rabbit {
 }
 
 var r = new Rabbit("Python");
-var nam = "Monty";
+var name = "Monty";
 console.log(r.name);  //Python
-console.log(name);    // Prints "Python"
+console.log(name);    //Monty

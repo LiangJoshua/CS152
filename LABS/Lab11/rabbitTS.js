@@ -5,6 +5,6 @@ var Rabbit = /** @class */ (function () {
     return Rabbit;
 }());
 var r = new Rabbit("Python");
-var nam = "Monty";
-console.log(r.name); // ERROR!!!
-console.log(name); // Prints "Python"
+var name = "Monty";
+console.log(r.name); //Python
+console.log(name); //Monty

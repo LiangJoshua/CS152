@@ -3,7 +3,7 @@ function swap(arr: number[], i: number, j: number) {
 }
 
 function sortAndGetLargest (arr: number[]) {
-    let tmp: number = arr[0]; // largest elem
+    let tmp: number= arr[0]; // largest elem
     let i: number;
     let j: number;
     for (i=0; i<arr.length; i+=1) {
@@ -19,5 +19,5 @@ function sortAndGetLargest (arr: number[]) {
     return tmp;
 }
 
-let largest = sortAndGetLargest([99,2,43,8,0,21,12]);
-console.log(largest); // should be 99, but prints 0
+let largest: number = sortAndGetLargest([99,2,43,8,0,21,12]);
+console.log(largest); // 99

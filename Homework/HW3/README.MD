@@ -7,12 +7,69 @@ see http://se.ethz.ch/~meyer/publications/computer/contract.pdf.
 Starter code is available on the course website.
 
 ## ==================================================
-
 ## Part 0 (no points) -- Set up your node environment
-
 ## ==================================================
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+From the command line, type the following commands (assuming Unix/OSX/Windows+Cygwin):
+
+$ mkdir contracts
+$ cd contracts
+$ npm init
+
+Use the defaults, except for "main" (specify contracts.js), "test" (specify mocha),
+and "author" (specify your name). If you make a mistake, you can edit package.json
+to correct.
+
+Also, use npm to install different modules that you will need:
+
+$ npm install mocha
+
+
+========================================
+Part 1 (5 pts) -- Handle basic contracts
+========================================
+
+A contract is a JavaScript function that takes in one argument
+and returns true if the argument meets certain conditions;
+otherwise it returns false. (The functions may have an optional
+"expected" property for more informative error messages).
+
+Two contracts are implemented for you:
+
+any: Accepts any argument.
+isNumber: Returns true if the argument is a number.
+
+Implement the following contracts:
+
+isBoolean
+isDefined: Returns true if the argument is neither null or undefined.
+isString
+isNegative
+isPositive
+
+
+A contract combinator takes 1 or more contracts and returns a new contract.
+The 'and' combinator is done for you; it takes a variable number of contracts
+and returns true only if all of the original contracts return true.
+
+Implement the following contract combinators:
+
+not: Takes a single contract; returns a contract that returns true
+only if the original contract returns false.
+or: Takes a variable number of contracts; returns true if any of
+the original contracts return true.
+
+
+To test your code, run `npm test`. Before you move on to the next part, all tests should pass.
+
+I recommend adding additional unit tests as you progress. It is an excellent way to verify
+that your code does what you expect. It also helps you to catch when you accidentally break
+your code. Whenever you think about adding some lines of code to test, consider putting this
+code in a unit test.
+
+When you are satisfied that this piece is working correctly, make this library available
+on your system. On the command line, change to the 'contracts' directory and type `npm link`.
+See https://docs.npmjs.com/cli/link for more details on this command.
 
 ### Prerequisites
 

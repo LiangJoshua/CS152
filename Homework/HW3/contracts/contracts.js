@@ -138,15 +138,19 @@ function expect(f) {
 }
 
 
-function contract(preList, post, f) {
-    if (preList === false) {
-        throw "Contract violation in position 1. Expected " + preList.expected + " but received Blame -> Top-level code";
-    }
-    else if (post === false){
-        throw "Contract violation. Expected " + post.expected + " but returned undefined. Blame -> " + f.name;
-    }
-    else{
-        f;
+function contract (preList, post, f) {
+    return function() {
+        for (let i = 0; i < preList.length; i++) {
+            let valid = preList[i].call(this, arguments[i]);
+            if (!valid)
+                throw new Error("Contract violation in position " + i + ". Expected " + preList[i].expected + " but received " + arguments[i] + ".  Blame -> Top-level code");
+        }
+
+        let result = f.apply(this, arguments);
+        if (!post(result))
+            throw new Error("Contract violation. Expected " + post.expected + " but returned " + result + ".  Blame -> " + f.name);
+
+        return result;
     }
 }
 

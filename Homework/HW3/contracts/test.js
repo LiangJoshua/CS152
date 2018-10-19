@@ -65,6 +65,7 @@ describe('isDefined()', function () {
         assert.equal(isDefined(0), true);
         assert.equal(isDefined(false), true);
         assert.equal(isDefined(true), true);
+        assert.equal(isDefined({}), true);
     });
 });
 

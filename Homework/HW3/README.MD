@@ -7,7 +7,7 @@ see http://se.ethz.ch/~meyer/publications/computer/contract.pdf.
 Starter code is available on the course website.
 
 ==================================================
-## Part 0 (no points) -- Set up your node environment
+#Part 0 (no points) -- Set up your node environment
 ==================================================
 
 From the command line, type the following commands (assuming Unix/OSX/Windows+Cygwin):

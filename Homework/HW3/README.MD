@@ -28,7 +28,7 @@ $ npm install mocha
 
 
 ========================================
-Part 1 (5 pts) -- Handle basic contracts
+### Part 1 (5 pts) -- Handle basic contracts
 ========================================
 
 A contract is a JavaScript function that takes in one argument
@@ -73,82 +73,54 @@ When you are satisfied that this piece is working correctly, make this library a
 on your system. On the command line, change to the 'contracts' directory and type `npm link`.
 See https://docs.npmjs.com/cli/link for more details on this command.
 
-### Prerequisites
+=====================================================
+### Part 2 (10 pts) -- First attempt at contract function
+=====================================================
 
-What things you need to install the software and how to install them
+Programming contracts are focused on ensuring that the inputs to a function are correct,
+and that the return value is correct. Most importantly, when something does go wrong,
+the contract library should be able to identify who is at fault -- the library writer,
+or the user of the library.
 
-```
-Give examples
-```
+Implement the contract function in contracts.js. It takes in a list of pre-conditions,
+a post-condition, and the function itself. If any of the pre-conditions are not met,
+throw an exception blaming the caller. If the post-condition is not met, throw an
+exception blaming the library. (The pre-conditions and post-condition are specified
+using the contracts that you defined in part 1.)
 
-### Installing
+Write some unit tests to verify that your function seems correct. Once you are satisfied,
+create a new 'example' project to test out your code. If you start in the contracts directory:
 
-A step by step series of examples that tell you how to get a development env running
+$ cd ..
+$ mkdir example
+$ npm init
+$ npm link contracts
 
-Say what the step will be
+All defaults are OK. Copy in the sample example programs to this directory.
 
-```
-Give the example
-```
+The example1.js program shows some examples to consider. From the example directory,
+run `node example1.js` to test. The output of this program should exactly match example1.output.
 
-And repeat
+=========================================================
+### Part 3 (5 pts) -- More advanced contracts
+=========================================================
 
-```
-until finished
-```
+JavaScript Proxies can simplify asserting properties about the parent object.
+(You are not required to use them for this portion, but you might find it easier).
 
-End with an example of getting some data out of the system or using it for a little demo
+The example2.js file contains some contracts involving objects.
+To handle this case, you will need to use the handler.apply
+and the handler.construct traps. Your output should exactly
+match example2.output.
 
-## Running the tests
+In example3.js, we see an alternate approach using objects.
+There is a custom contract that uses the 'this' keyword to refer to
+the object containing the method. Again, your output should
+match example2.output exactly.
 
-Explain how to run the automated tests for this system
+================================================================
+### Part 4 -- Submit your code
+================================================================
+Upload your contracts.js file to Canvas.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Do not submit any other files or you will lose points.

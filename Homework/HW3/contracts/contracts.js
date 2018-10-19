@@ -69,7 +69,7 @@ function and() {
             if (!args[i].call(this, v)) {
                 return false;
             }
-            
+
         }
         return true;
     }

@@ -139,7 +139,15 @@ function expect(f) {
 
 
 function contract(preList, post, f) {
-    // ***YOUR CODE HERE***
+    if (preList === false) {
+        throw "Contract violation in position 1. Expected " + preList.expected + " but received Blame -> Top-level code";
+    }
+    else if (post === false){
+        throw "Contract violation. Expected " + post.expected + " but returned undefined. Blame -> " + f.name;
+    }
+    else{
+        f;
+    }
 }
 
 

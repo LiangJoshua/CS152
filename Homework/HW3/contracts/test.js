@@ -77,9 +77,9 @@ describe('isString()', function() {
     assert.equal(isString('I am the very model of a modern major general'), true);
   });
   it('should return true if the argument is a string object', function() {
-    assert.equal(isString(new String('LlamÃ© una vez a la visiÃ³n y vino.')), true);
-    assert.equal(isString(new String("Y era pÃ¡lida y triste,")), true);
-    assert.equal(isString(new String("y sus pupilas ardÃ­an como hogueras de martirios.")), true);
+    assert.equal(isString(new String('Llamé una vez a la visión y vino.')), true);
+    assert.equal(isString(new String("Y era pálida y triste,")), true);
+    assert.equal(isString(new String("y sus pupilas ardían como hogueras de martirios.")), true);
   });
   it('should return false if the argument is anything else', function() {
     assert.equal(isString(42), false);
@@ -175,3 +175,4 @@ describe('or()', function() {
     assert.equal(or(isNumber, isPositive, isDefined).expected, "number or positive number or defined");
   });
 });
+

@@ -12,11 +12,9 @@ Starter code is available on the course website.
 
 From the command line, type the following commands (assuming Unix/OSX/Windows+Cygwin):
 
-$ mkdir contracts
-
-$ cd contracts
-
-$ npm init
+$ mkdir contracts\
+$ cd contracts\
+$ npm init\
 
 Use the defaults, except for "main" (specify contracts.js), "test" (specify mocha),
 and "author" (specify your name). If you make a mistake, you can edit package.json
@@ -43,11 +41,11 @@ isNumber: Returns true if the argument is a number.
 
 Implement the following contracts:
 
-isBoolean
-isDefined: Returns true if the argument is neither null or undefined.
-isString
-isNegative
-isPositive
+isBoolean\
+isDefined: Returns true if the argument is neither null or undefined.\
+isString\
+isNegative\
+isPositive\
 
 
 A contract combinator takes 1 or more contracts and returns a new contract.
@@ -56,10 +54,10 @@ and returns true only if all of the original contracts return true.
 
 Implement the following contract combinators:
 
-not: Takes a single contract; returns a contract that returns true
-only if the original contract returns false.
-or: Takes a variable number of contracts; returns true if any of
-the original contracts return true.
+not: Takes a single contract; returns a contract that returns true\
+only if the original contract returns false.\
+or: Takes a variable number of contracts; returns true if any of\
+the original contracts return true.\
 
 
 To test your code, run `npm test`. Before you move on to the next part, all tests should pass.
@@ -91,10 +89,10 @@ using the contracts that you defined in part 1.)
 Write some unit tests to verify that your function seems correct. Once you are satisfied,
 create a new 'example' project to test out your code. If you start in the contracts directory:
 
-$ cd ..
-$ mkdir example
-$ npm init
-$ npm link contracts
+$ cd ..\
+$ mkdir example\
+$ npm init\
+$ npm link contracts\
 
 All defaults are OK. Copy in the sample example programs to this directory.
 
@@ -121,6 +119,7 @@ match example2.output exactly.
 ================================================================
 ### Part 4 -- Submit your code
 ================================================================
+
 Upload your contracts.js file to Canvas.
 
 Do not submit any other files or you will lose points.

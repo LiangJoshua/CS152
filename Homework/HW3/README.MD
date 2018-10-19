@@ -14,7 +14,7 @@ From the command line, type the following commands (assuming Unix/OSX/Windows+Cy
 
 $ mkdir contracts\
 $ cd contracts\
-$ npm init\
+$ npm init
 
 Use the defaults, except for "main" (specify contracts.js), "test" (specify mocha),
 and "author" (specify your name). If you make a mistake, you can edit package.json
@@ -45,7 +45,7 @@ isBoolean\
 isDefined: Returns true if the argument is neither null or undefined.\
 isString\
 isNegative\
-isPositive\
+isPositive
 
 
 A contract combinator takes 1 or more contracts and returns a new contract.
@@ -57,7 +57,7 @@ Implement the following contract combinators:
 not: Takes a single contract; returns a contract that returns true\
 only if the original contract returns false.\
 or: Takes a variable number of contracts; returns true if any of\
-the original contracts return true.\
+the original contracts return true.
 
 
 To test your code, run `npm test`. Before you move on to the next part, all tests should pass.
@@ -92,7 +92,7 @@ create a new 'example' project to test out your code. If you start in the contra
 $ cd ..\
 $ mkdir example\
 $ npm init\
-$ npm link contracts\
+$ npm link contracts
 
 All defaults are OK. Copy in the sample example programs to this directory.
 

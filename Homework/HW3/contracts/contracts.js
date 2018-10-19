@@ -27,11 +27,13 @@ function isBoolean(v) {
 isBoolean.expected = "boolean";
 
 function isDefined(v) {
-    if (typeof(v) === 'undefined' || typeof(v) === 'object') {
+    if (typeof(v) === 'undefined' || v === null) {
         return false;
     }
     return true;
 }
+
+isDefined.expected = "defined";
 
 function isString(v) {
     if (typeof(v) === 'string' || v instanceof String) {
@@ -49,7 +51,7 @@ function isNegative(v) {
     return false;
 }
 
-isNegative.expected = "negative";
+isNegative.expected = "negative number";
 
 function isPositive(v) {
     if (typeof(v) === 'number' && v > 0) {
@@ -58,7 +60,7 @@ function isPositive(v) {
     return false;
 }
 
-isPositive.expected = "positive";
+isPositive.expected = "positive number";
 
 // Combinators:
 
@@ -91,21 +93,31 @@ function or() {
             if (args[i].call(this, v)) {
                 return true;
             }
+
         }
         return false;
     }
     cont.expected = expect(args[0]);
     for (let i = 1; i < args.length; i++) {
-        cont.expected += " and " + expect(args[i]);
+        cont.expected += " or " + expect(args[i]);
     }
     return cont;
 }
 
 function not(c) {
-    if (c === false) {
-        return true;
+    let args = Array.prototype.slice.call(arguments);
+    let cont = function (v) {
+        for (let i in args) {
+            if (!args[i].call(this, v)) {
+                return true;
+            }
+
+        }
+        return false;
     }
-    return false;
+    cont.expected = "not " + expect(args[0]);
+
+    return cont;
 };
 
 

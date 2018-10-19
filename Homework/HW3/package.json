@@ -1,0 +1,14 @@
+{
+  "name": "hw3",
+  "version": "1.0.0",
+  "description": "HW 3: JS programming contracts",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

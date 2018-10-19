@@ -14,7 +14,10 @@ isNumber.expected = "number";
 // ***YOUR CODE HERE***
 // IMPLEMENT THE FOLLOWING CONTRACTS
 //
-function isBoolean(){}
+function isBoolean(v){
+	return !Boolean.isNaN(v) && typeof v ==='boolean';
+}
+isBoolean.expected = "boolean";
 function isDefined(){}
 function isString(){}
 function isNegative(){}

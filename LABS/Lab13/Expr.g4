@@ -13,7 +13,6 @@ SUB : '-' ;
 
 ID : [a-zA-Z]+ ;
 
-
 // ***Parsing rules ***
 
 /** The start rule */
@@ -30,5 +29,3 @@ expr: expr op=( '*' | '/' ) expr   # MulDiv
     | ID                        # id
     | ID '=' expr               # assign
     ;
-
-

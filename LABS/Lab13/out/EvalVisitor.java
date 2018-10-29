@@ -3,6 +3,8 @@ import java.util.Map;
 
 public class EvalVisitor extends ExprBaseVisitor<Integer> {
 
+    Map<String, Integer> env = new HashMap<String, Integer>();
+
     @Override
     public Integer visitPrintExpr(ExprParser.PrintExprContext ctx) {
         int value = visit(ctx.expr());
@@ -42,9 +44,9 @@ public class EvalVisitor extends ExprBaseVisitor<Integer> {
 
     @Override
     public Integer visitAssign(ExprParser.AssignContext ctx) {
-        // Get the text of your ID
+
         String id = ctx.ID().getText();
-        // Get the value of the sub-expression
+
         int value = visit(ctx.expr());
 
         env.put(id, value);
@@ -54,14 +56,8 @@ public class EvalVisitor extends ExprBaseVisitor<Integer> {
 
     @Override
     public Integer visitId(ExprParser.IdContext ctx) {
-        //
-        // YOUR CODE HERE.
-        // Follow a similar pattern to the previous function.
-        // Return the value of the ID in the store if available,
-        // or 0 otherwise.
-        //
         String id = ctx.ID().getText();
         return env.get(id);
     }
-}
 
+}

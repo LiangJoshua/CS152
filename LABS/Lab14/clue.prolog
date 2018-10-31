@@ -56,7 +56,7 @@ doesnt_use(professor_plum, revolver).
 
 %Suspect X wasn't in room Y
 wasnt_in(miss_scarlet, billiard_room).
-wasnt_in(proessor_plum, kitchen).
+wasnt_in(professor_plum, kitchen).
 wasnt_in(colonel_mustard, hall).
 wasnt_in(miss_scarlet, hall).
 

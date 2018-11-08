@@ -26,4 +26,7 @@ find_path(Start, End, TotalCost, Path, Visited) :-
   TotalCost is InitCost + RestCost,
   Path = [Start|TailPath].
 
+find_path(Start, End, TotalCost, Path) :-
+  find_path(Start, End, TotalCost, Path, [Start]).
+
 % find_path(a, c, TC, P).

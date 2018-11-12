@@ -1,0 +1,91 @@
+$ swipl flights.prolog 
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 7.2.3)
+Copyright (c) 1990-2015 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- route(sjc, phl, [], DT, AT, Flights, TotalCost). 
+false.
+
+?- route(sfo, sjc, [], DT, AT, Flights, TotalCost).
+DT = 8:0,
+AT = 11:5,
+Flights = [sfo, lax, sjc],
+TotalCost = 237.5 ;
+DT = 8:0,
+AT = 19:15,
+Flights = [sfo, lax, sjc],
+TotalCost = 236.11 ;
+DT = 12:40,
+AT = 19:15,
+Flights = [sfo, lax, sjc],
+TotalCost = 239.22000000000003 ;
+false.
+
+?- route(aus, phl, [], DT, AT, Flights, TotalCost).
+DT = 7:45,
+AT = 11:56,
+Flights = [aus, phl],
+TotalCost = 427.47 ;
+DT = 6:29,
+AT = 12:28,
+Flights = [aus, ewr, phl],
+TotalCost = 656.11 ;
+DT = 6:29,
+AT = 15:23,
+Flights = [aus, ewr, phl],
+TotalCost = 656.11 ;
+false.
+
+?- route(ewr, lax, [], DT, AT, Flights, TotalCost).
+DT = 9:5,
+AT = 12:20,
+Flights = [ewr, lax],
+TotalCost = 292.47 ;
+DT = 5:25,
+AT = 20:40,
+Flights = [ewr, lax],
+TotalCost = 292.47 ;
+DT = 9:0,
+AT = 14:20,
+Flights = [ewr, aus, lax],
+TotalCost = 712.35 ;
+DT = 9:0,
+AT = 21:50,
+Flights = [ewr, aus, sfo, lax],
+TotalCost = 709.3199999999999 ;
+DT = 6:59,
+AT = 21:50,
+Flights = [ewr, phl, sfo, lax],
+TotalCost = 1273.4 ;
+DT = 11:35,
+AT = 21:50,
+Flights = [ewr, phl, sfo, lax],
+TotalCost = 1273.4 ;
+DT = 14:29,
+AT = 21:50,
+Flights = [ewr, phl, sfo, lax],
+TotalCost = 1273.4 ;
+DT = 7:30,
+AT = 14:0,
+Flights = [ewr, sfo, lax],
+TotalCost = 402.82 ;
+DT = 7:30,
+AT = 21:50,
+Flights = [ewr, sfo, lax],
+TotalCost = 383.37 ;
+DT = 10:30,
+AT = 21:50,
+Flights = [ewr, sfo, lax],
+TotalCost = 383.37 ;
+DT = 16:11,
+AT = 21:50,
+Flights = [ewr, sfo, lax],
+TotalCost = 383.37 ;
+false.
+
+?- 
+

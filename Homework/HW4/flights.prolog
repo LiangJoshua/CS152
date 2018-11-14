@@ -58,6 +58,17 @@ flight(ewr, sfo, 16:11, 19:40, 313.40).
 % Flights: List of the airports to visit, in order.
 % TotalCost: Cost of all flights.
 route(Departing, Arriving, Visited, DepartureTime, ArrivalTime, Flights, TotalCost) :-
-  fail.
+  flight(Departing, Arriving, DepartureTime, ArrivalTime, TotalCost),
+  \+ member(Arriving, Visited),
+  Flights = [Departing, Arriving].  
+
+route(Departing, Arriving, Visited, DepartureTime, ArrivalTime, Flights, TotalCost) :-
+  flight(Departing, Intermediary, DepartureTime, IntermediaryArrival, InitCost),
+  \+ member(Intermediary, Visited),
+  append(Visited, [Departing, Intermediary], V),
+  route(Intermediary, Arriving, V, IntermediaryDeparture, ArrivalTime, TailFlights, TailCost),
+  IntermediaryArrival @< IntermediaryDeparture,
+  Flights = [Departing | TailFlights],
+  TotalCost is InitCost + TailCost.
 
 

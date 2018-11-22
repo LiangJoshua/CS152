@@ -18,7 +18,7 @@ public class FeatherweightJavaScriptBaseVisitor<T> extends AbstractParseTreeVisi
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSimpBlock(@NotNull FeatherweightJavaScriptParser.SimpBlockContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVarassign(@NotNull FeatherweightJavaScriptParser.VarassignContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -32,42 +32,42 @@ public class FeatherweightJavaScriptBaseVisitor<T> extends AbstractParseTreeVisi
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVarAsgn(@NotNull FeatherweightJavaScriptParser.VarAsgnContext ctx) { return visitChildren(ctx); }
+	@Override public T visitNullval(@NotNull FeatherweightJavaScriptParser.NullvalContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitComparison(@NotNull FeatherweightJavaScriptParser.ComparisonContext ctx) { return visitChildren(ctx); }
+	@Override public T visitSimpblock(@NotNull FeatherweightJavaScriptParser.SimpblockContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBool(@NotNull FeatherweightJavaScriptParser.BoolContext ctx) { return visitChildren(ctx); }
+	@Override public T visitMuldivmod(@NotNull FeatherweightJavaScriptParser.MuldivmodContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitIfThenElse(@NotNull FeatherweightJavaScriptParser.IfThenElseContext ctx) { return visitChildren(ctx); }
+	@Override public T visitEqualities(@NotNull FeatherweightJavaScriptParser.EqualitiesContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAddSub(@NotNull FeatherweightJavaScriptParser.AddSubContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunctioncall(@NotNull FeatherweightJavaScriptParser.FunctioncallContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitIfThen(@NotNull FeatherweightJavaScriptParser.IfThenContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAddsub(@NotNull FeatherweightJavaScriptParser.AddsubContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -75,6 +75,13 @@ public class FeatherweightJavaScriptBaseVisitor<T> extends AbstractParseTreeVisi
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitWhile(@NotNull FeatherweightJavaScriptParser.WhileContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitBoolval(@NotNull FeatherweightJavaScriptParser.BoolvalContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -95,14 +102,14 @@ public class FeatherweightJavaScriptBaseVisitor<T> extends AbstractParseTreeVisi
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBareExpr(@NotNull FeatherweightJavaScriptParser.BareExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFullblock(@NotNull FeatherweightJavaScriptParser.FullblockContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFullBlock(@NotNull FeatherweightJavaScriptParser.FullBlockContext ctx) { return visitChildren(ctx); }
+	@Override public T visitBareexpr(@NotNull FeatherweightJavaScriptParser.BareexprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -116,40 +123,54 @@ public class FeatherweightJavaScriptBaseVisitor<T> extends AbstractParseTreeVisi
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMulDivMod(@NotNull FeatherweightJavaScriptParser.MulDivModContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunctiondeclaration(@NotNull FeatherweightJavaScriptParser.FunctiondeclarationContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitNull(@NotNull FeatherweightJavaScriptParser.NullContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIfthenelse(@NotNull FeatherweightJavaScriptParser.IfthenelseContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVarDecl(@NotNull FeatherweightJavaScriptParser.VarDeclContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIfthen(@NotNull FeatherweightJavaScriptParser.IfthenContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVarApp(@NotNull FeatherweightJavaScriptParser.VarAppContext ctx) { return visitChildren(ctx); }
+	@Override public T visitArguments(@NotNull FeatherweightJavaScriptParser.ArgumentsContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFucApp(@NotNull FeatherweightJavaScriptParser.FucAppContext ctx) { return visitChildren(ctx); }
+	@Override public T visitSeperator(@NotNull FeatherweightJavaScriptParser.SeperatorContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFuncDecl(@NotNull FeatherweightJavaScriptParser.FuncDeclContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVarreference(@NotNull FeatherweightJavaScriptParser.VarreferenceContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitParameters(@NotNull FeatherweightJavaScriptParser.ParametersContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitVardecelaration(@NotNull FeatherweightJavaScriptParser.VardecelarationContext ctx) { return visitChildren(ctx); }
 }

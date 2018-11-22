@@ -4,14 +4,13 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class Environment {
-    private Map<String, Value> env = new HashMap<String, Value>();
+    private Map<String,Value> env = new HashMap<String,Value>();
     private Environment outerEnv;
 
     /**
      * Constructor for global environment
      */
-    public Environment() {
-    }
+    public Environment() {}
 
     /**
      * Constructor for local environment of a function
@@ -28,18 +27,8 @@ public class Environment {
      * null is returned (similar to how JS returns undefined.
      */
     public Value resolveVar(String varName) {
-        Environment e = new Environment(this);
-
-        while ((e != null) && (e.env.get(varName) == null)){
-            e = e.outerEnv;
-        }
-
-        if(e == null){
-            return new NullVal();
-        }
-        else{
-            return e.env.get(varName);
-        }
+        // YOUR CODE HERE
+        return null;
     }
 
     /**
@@ -48,16 +37,7 @@ public class Environment {
      * or any of the function's outer scopes, the var is stored in the global scope.
      */
     public void updateVar(String key, Value v) {
-        if (env.containsKey(key)) {
-
-            env.replace(key, v);
-        }
-        else if (this.outerEnv != null && this.outerEnv.resolveVar(key) != null){
-            this.outerEnv.updateVar(key, v);
-        }
-        else{
-            this.env.put(key, v);
-        }
+        // YOUR CODE HERE
     }
 
     /**
@@ -66,11 +46,6 @@ public class Environment {
      * a RuntimeException is thrown.
      */
     public void createVar(String key, Value v) {
-        if (this.env.containsKey(key)){
-            throw new RuntimeException("Variable " + key + " already exists");
-        }
-        else{
-            this.env.put(key, v);
-        }
+        // YOUR CODE HERE
     }
 }

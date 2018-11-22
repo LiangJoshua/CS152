@@ -29,6 +29,7 @@ GTE	  : '>=';
 LTE	  : '<=';
 EQ	  : '==';
 
+ASGN	  : '=' ;
 IDENTIFIER: ([a-zA-Z] | '_') ([a-zA-z0-9] | '_')* ;
 
 

@@ -91,11 +91,7 @@ class ClosureVal implements Value {
      * be bound to its matching argument and added to the new local environment.
      */
     public Value apply(List<Value> argVals) {
-        Environment e = new Environment(outerEnv);
-
-        for (int i = 0; i < argVals.size(); i++)
-            e.createVar(params.get(i), argVals.get(i));
-
-        return body.evaluate(e);
+        // YOUR CODE HERE
+        return null;
     }
 }

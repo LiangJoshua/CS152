@@ -1,0 +1,38 @@
+[Taken from http://www.brasslantern.org/writers/howto/i7tutorial-b.html,
+updated for the latest version of Inform]
+
+"A Sample Game"
+
+The Stateroom is a room. "Staterooms aboard a spaceship, even one as luxurious as the Thaleia, are tight, cramped affairs, and this one is no exception. There is barely enough room for you and the furniture. The door to the hallway is locked tight for now. East is your bathroom."
+
+The Bathroom is east of the Stateroom. The description is "Like your stateroom in smallness, only moreso. There is a mirror on one wall."
+
+The leaflet is in the Stateroom. The description is "It goes on and on about how wonderful the Thaleia is. Should you have trouble sleeping later, reading this could help."
+
+[ Supporters by default cannot be taken]
+The bed is an enterable supporter in the Stateroom.
+
+[Specify an alternate name for a prop]
+Understand "furniture" as the bed.
+
+The mirror is scenery in the Bathroom. The description is "You look tired after your long shuttle flight to the Thaleia."
+
+The shower is here. It is fixed in place. "Opposite the mirror is the shower, which is closed." The description of the shower is "When it's open, you get in it to take a shower. Right now it's closed, keeping you from using it."
+
+When play begins: say "The intercom crackles to life. 'This is your captain speaking. We're jumping to hyperspace shortly, so for your protection, we've locked all stateroom doors. As soon as we've safely jumped, your doors will open and you will be free to move about the ship.'"
+
+Robutler is a man in the Stateroom. "Robutler stands attentive to your needs." The description of Robutler is "Robutler has four arms, treads, and a shiny metal body." Understand "robot" and "butler" as Robutler.
+
+Every turn:
+    if Robutler is not visible begin;
+        move Robutler to the location of the player;
+        say "Robutler rattles into the room, following you.";
+    end if.
+
+At 9:10 AM: say "You realize that you are becoming exhausted." At 9:20 AM: say "Your exhaustion is threatening to send you crashing to the floor, unable to move." At 9:25 AM: say "You are about to drop dead of exhaustion. You really should get in bed."
+
+At 9:27 AM:
+    end the story saying "You stumble to your knees and then collapse on the floor, quite surprised to find that the phrase 'drop dead of exhaustion' can be literally true."
+
+Instead of entering the bed:
+    end the story saying "You climb into the bed, exhaustion overtaking you. You are asleep before you can order Robutler to undress you."

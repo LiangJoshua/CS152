@@ -1,0 +1,46 @@
+"Turkey Quest" by "Thomas H. Austin"
+
+Use no scoring.
+
+When play begins:
+	say "Your name is Rex, the family dog.  Today is a special day!  Many people are here today visiting your humans.  And there are many tasty treats and good smells!  Hmm…  How can you get something to eat?".
+
+The time of day is 5:00 pm.
+
+The turkey is in the kitchen. The turkey is edible. "Turkey!  It is like giant chicken!  Surely the humans will not mind if you take a small taste…"
+
+At 5:05 PM:
+	Say "Momlady moves the turkey from the kitchen to the table in the dining room.";
+	Now the turkey is in the Dining Room.
+
+Instead of eating the turkey in the Dining Room:
+	say "You take a small little bite.  It is good!  You eat more.  One of the little humans comes into the room.  'Rex! Bad dog!  Mom, Rex is eating the turkey!'";
+	say "You have been a BAD DOG.  You hang your head in shame and climb down the chair to the floor, still chewing Turkey.  One of the big humans comes in with a broom.  'Bad dog! Outside.";
+	end the story saying "It is cold out here!  And all of the humans are inside without you!  Life is unfair….  Hey, a squirrel!!!"
+
+Instead of eating or taking the turkey in the Kitchen, say "You move towards the turkey, but one of the humans says 'bad Rex!' and slaps you on the nose.  You slink away, knowing that you were a BAD DOG."
+
+The Dining Room is a room.  "The humans are all in the next room.  You smell some tasty food from on top of the table. [if the turkey is in the Dining Room]Something tasty is on the table, you are sure of it.[end if]"
+
+The table is in the Dining Room.  "The table is too high for you to see on top, but you can smell treats!"
+
+The chair is in the Dining Room. "It is a wide chair.  Uncle Carl usually sits there".  Instead of examining the chair, say "The chair is pushed back from the table.  It is tall enough that you can climb on it."
+
+Instead of climbing the chair:
+	say "You are on top of the table.  Such tasty food is here!".
+
+The Kitchen is a room.  "It is bright and shiny in here.  Your owner loves to make tasty treats in here.  Several of the humans are here."  The Kitchen is north of the Dining Room.
+
+Uncle Carl is in the Kitchen.  "Uncle Carl is a nice man.  Sometimes he has a treat."  Uncle Carl is a man.
+Momlady is in the Kitchen.  "Momlady is a nice person.  She makes food."  Momlady is a woman.
+Aunt Judy is in the Kitchen.  "Aunt Judy never has treats.  What more needs to be said?".  Aunt Judy is a woman.
+
+The chewtoy is not edible.  "It looks like a little hamburger".  Instead of eating the chewtoy, say ">>>SQUEAK<<<  Hmm, maybe that is not food."
+
+Instead of examining Aunt Judy, say "'Nice doggie,' she says with a grimace.  She pats you once and tries to move away from you".
+
+Instead of examining Uncle Carl:
+	say "He looks over at you and smiles.  'I did'nt forget about you boy.  Here, have this.'  He drops a chewtoy.";
+	Now there is a chewtoy in the Kitchen.
+
+

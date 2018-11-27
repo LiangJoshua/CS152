@@ -1,0 +1,914 @@
+<?xml version="1.0"?>
+
+<Skein rootNode="node-1002">
+    <generator>Inform Mac Client (Inform version 1.65/6.33/6M62)</generator>
+    <item nodeId="node-1002">
+        <command xml:space="preserve">Lord of the Rings</command>
+        <result xml:space="preserve">
+
+
+Lord of the Rings
+An Interactive Fiction by Josh Laptop
+Release 1 / Serial number 181126 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
+
+Feast Room
+You see a warm fire burning in the hearth. There is a table with some left over food from the feast. A window lets the Sun in from outside. The front door to the north, leads outside.
+
+You see a small jewel encrusted chest.
+
+Gandalf has arrived and stares at you imposingly.
+
+Aragorn has arrived and is ready to go.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1105"></child>
+            <child nodeId="node-1107"></child>
+            <child nodeId="node-1005"></child>
+            <child nodeId="node-1101"></child>
+            <child nodeId="node-1040"></child>
+            <child nodeId="node-1007"></child>
+            <child nodeId="node-1026"></child>
+            <child nodeId="node-1034"></child>
+            <child nodeId="node-1109"></child>
+            <child nodeId="node-1006"></child>
+            <child nodeId="node-1059"></child>
+            <child nodeId="node-1064"></child>
+            <child nodeId="node-1033"></child>
+            <child nodeId="node-1010"></child>
+            <child nodeId="node-1023"></child>
+            <child nodeId="node-1079"></child>
+        </children>
+    </item>
+    <item nodeId="node-1079">
+        <command xml:space="preserve">throw chest into fire</command>
+        <result xml:space="preserve">You don't want to burn that!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1080"></child>
+        </children>
+    </item>
+    <item nodeId="node-1080">
+        <command xml:space="preserve">inventory</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1081"></child>
+        </children>
+    </item>
+    <item nodeId="node-1081">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Frodo's house
+You see a warm fire burning in the hearth. There is a table with some half eaten food on it. A window lets the Sun in from outside. The front door to the north, leads outside.
+
+You see a small jewel encrusted chest.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1082"></child>
+        </children>
+    </item>
+    <item nodeId="node-1082">
+        <command xml:space="preserve">take chest</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1083"></child>
+        </children>
+    </item>
+    <item nodeId="node-1083">
+        <command xml:space="preserve">throw chest into the fire</command>
+        <result xml:space="preserve">You don't want to burn that!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1084"></child>
+        </children>
+    </item>
+    <item nodeId="node-1084">
+        <command xml:space="preserve">inventory</command>
+        <result xml:space="preserve">You are carrying:
+  a small jewel chest (closed)
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1085"></child>
+        </children>
+    </item>
+    <item nodeId="node-1085">
+        <command xml:space="preserve">open chest</command>
+        <result xml:space="preserve">You open the small jewel chest, revealing a ring.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1086"></child>
+        </children>
+    </item>
+    <item nodeId="node-1086">
+        <command xml:space="preserve">throw ring into fire</command>
+        <result xml:space="preserve">You throw the ring into the fire! After a time, you notice it has not burned... but some writing has appeared on it. You use some fire tongs to remove the rings...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1087"></child>
+        </children>
+    </item>
+    <item nodeId="node-1087">
+        <command xml:space="preserve">inventory</command>
+        <result xml:space="preserve">You are carrying:
+  a small jewel chest (open)
+    a ring
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1088"></child>
+        </children>
+    </item>
+    <item nodeId="node-1088">
+        <command xml:space="preserve">look at ring</command>
+        <result xml:space="preserve">It's gold and shiny, so shiny you can't help being captivated by its beauty...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1023">
+        <command xml:space="preserve">take the hearth</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1025"></child>
+        </children>
+    </item>
+    <item nodeId="node-1025">
+        <command xml:space="preserve">inventory</command>
+        <result xml:space="preserve">You are carrying:
+  a hearth
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1010">
+        <command xml:space="preserve">take the chest</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1011"></child>
+        </children>
+    </item>
+    <item nodeId="node-1011">
+        <command xml:space="preserve">chest</command>
+        <result xml:space="preserve">That's not a verb I recognise.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1012"></child>
+        </children>
+    </item>
+    <item nodeId="node-1012">
+        <command xml:space="preserve">grab chest</command>
+        <result xml:space="preserve">That's not a verb I recognise.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1013"></child>
+        </children>
+    </item>
+    <item nodeId="node-1013">
+        <command xml:space="preserve">touch chest</command>
+        <result xml:space="preserve">You feel nothing unexpected.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1014"></child>
+        </children>
+    </item>
+    <item nodeId="node-1014">
+        <command xml:space="preserve">take chest</command>
+        <result xml:space="preserve">You already have that.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1015"></child>
+        </children>
+    </item>
+    <item nodeId="node-1015">
+        <command xml:space="preserve">inventory</command>
+        <result xml:space="preserve">You are carrying:
+  a small jewel chest
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1016"></child>
+        </children>
+    </item>
+    <item nodeId="node-1016">
+        <command xml:space="preserve">drop chest</command>
+        <result xml:space="preserve">Dropped.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1017"></child>
+        </children>
+    </item>
+    <item nodeId="node-1017">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Frodo's house
+You see a warm fire burning in the hearth. There is a table with some half eaten food on it. A window lets the Sun in from outside. The front door to the north, leads outside.
+
+You can see a small jewel chest here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1018"></child>
+        </children>
+    </item>
+    <item nodeId="node-1018">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">You can't go that way.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1019"></child>
+        </children>
+    </item>
+    <item nodeId="node-1019">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+shire
+The sun is shining and you can hear birds in the trees. South is Frodo's house. To the west is a river.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1020"></child>
+        </children>
+    </item>
+    <item nodeId="node-1020">
+        <command xml:space="preserve">pick up chest</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1021"></child>
+        </children>
+    </item>
+    <item nodeId="node-1021">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Frodo's house
+You see a warm fire burning in the hearth. There is a table with some half eaten food on it. A window lets the Sun in from outside. The front door to the north, leads outside.
+
+You can see a small jewel chest here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1022"></child>
+        </children>
+    </item>
+    <item nodeId="node-1022">
+        <command xml:space="preserve">look at fire</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1033">
+        <command xml:space="preserve">take fire</command>
+        <result xml:space="preserve">You'll burn your hands!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1064">
+        <command xml:space="preserve">open the chest</command>
+        <result xml:space="preserve">You open the small jewel chest, revealing a ring.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1065"></child>
+        </children>
+    </item>
+    <item nodeId="node-1065">
+        <command xml:space="preserve">throw the ring into the fire</command>
+        <result xml:space="preserve">(first taking the ring)
+You put the ring into the hearth.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1066"></child>
+        </children>
+    </item>
+    <item nodeId="node-1066">
+        <command xml:space="preserve">put the chest in the fire</command>
+        <result xml:space="preserve">(first taking the small jewel chest)
+You put the small jewel chest into the hearth.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1059">
+        <command xml:space="preserve">open chest</command>
+        <result xml:space="preserve">You open the small jewel chest, revealing a ring.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1060"></child>
+            <child nodeId="node-1090"></child>
+            <child nodeId="node-1068"></child>
+        </children>
+    </item>
+    <item nodeId="node-1068">
+        <command xml:space="preserve">throw ring into fire</command>
+        <result xml:space="preserve">You throw the ring into the fire! After a time, you notice it has not burned... but some writing has appeared on it. You use some fire tongs to remove the rings...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1073"></child>
+            <child nodeId="node-1069"></child>
+        </children>
+    </item>
+    <item nodeId="node-1069">
+        <command xml:space="preserve">put right</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1070"></child>
+        </children>
+    </item>
+    <item nodeId="node-1070">
+        <command xml:space="preserve">put ring in fire</command>
+        <result xml:space="preserve">You throw the ring into the fire!
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1073">
+        <command xml:space="preserve">inventory</command>
+        <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1074"></child>
+        </children>
+    </item>
+    <item nodeId="node-1074">
+        <command xml:space="preserve">look at hearth</command>
+        <result xml:space="preserve">The fire burns brightly, giving off a comforting warmth.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1090">
+        <command xml:space="preserve">take ring</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1091"></child>
+        </children>
+    </item>
+    <item nodeId="node-1091">
+        <command xml:space="preserve">throw ring into fire</command>
+        <result xml:space="preserve">You throw the ring into the fire! After a time, you notice it has not burned... but some writing has appeared on it. You use some fire tongs to remove the rings...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1092"></child>
+        </children>
+    </item>
+    <item nodeId="node-1092">
+        <command xml:space="preserve">inventory</command>
+        <result xml:space="preserve">You are carrying:
+  a ring
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1093"></child>
+        </children>
+    </item>
+    <item nodeId="node-1093">
+        <command xml:space="preserve">look at ring</command>
+        <result xml:space="preserve">It's gold and shiny, so shiny you can't help being captivated by its beauty...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1060">
+        <command xml:space="preserve">look at ring</command>
+        <result xml:space="preserve">It's gold and shiny, so shiny you can't help being captivated by its beauty...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1061"></child>
+        </children>
+    </item>
+    <item nodeId="node-1061">
+        <command xml:space="preserve">put chest on table</command>
+        <result xml:space="preserve">(first taking the small jewel chest)
+You put the small jewel chest on the table.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1062"></child>
+        </children>
+    </item>
+    <item nodeId="node-1062">
+        <command xml:space="preserve">look at table</command>
+        <result xml:space="preserve">The food on the table has been there awhile, and has gone bad...
+
+On the table is a small jewel chest (in which is a ring).
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1063"></child>
+        </children>
+    </item>
+    <item nodeId="node-1063">
+        <command xml:space="preserve">throw the ring into the fire</command>
+        <result xml:space="preserve">(first taking the ring)
+That can't contain things.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1006">
+        <command xml:space="preserve">north</command>
+        <result xml:space="preserve">
+shire
+The sun is shining and you can hear birds in the trees.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1109">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+Rivendell
+Rivendell, also known as Imladris, is an Elven town and the house of Elrond.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1034">
+        <command xml:space="preserve">loook at table</command>
+        <result xml:space="preserve">That's not a verb I recognise.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1035"></child>
+        </children>
+    </item>
+    <item nodeId="node-1035">
+        <command xml:space="preserve">look at table</command>
+        <result xml:space="preserve">The food on the table has been there awhile, and has gone bad...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1036"></child>
+        </children>
+    </item>
+    <item nodeId="node-1036">
+        <command xml:space="preserve">examine table</command>
+        <result xml:space="preserve">The food on the table has been there awhile, and has gone bad...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1037"></child>
+        </children>
+    </item>
+    <item nodeId="node-1037">
+        <command xml:space="preserve">look at the food</command>
+        <result xml:space="preserve">Some slightly hardened cheese, and crusty stale bread. It doesn't look very edible...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1038"></child>
+        </children>
+    </item>
+    <item nodeId="node-1038">
+        <command xml:space="preserve">take table</command>
+        <result xml:space="preserve">That's hardly portable.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1039"></child>
+        </children>
+    </item>
+    <item nodeId="node-1039">
+        <command xml:space="preserve">look at chest</command>
+        <result xml:space="preserve">You see nothing special about the small jewel chest.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1026">
+        <command xml:space="preserve">look at hearth</command>
+        <result xml:space="preserve">The fire burns brightly, giving off a comforting warmth.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1027"></child>
+        </children>
+    </item>
+    <item nodeId="node-1027">
+        <command xml:space="preserve"> look at fire</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1007">
+        <command xml:space="preserve">look at fire</command>
+        <result xml:space="preserve">The fire burns brightly, giving off a comforting warmth.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1029"></child>
+            <child nodeId="node-1008"></child>
+        </children>
+    </item>
+    <item nodeId="node-1008">
+        <command xml:space="preserve">look at hearth</command>
+        <result xml:space="preserve">You see nothing special about the hearth.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1009"></child>
+        </children>
+    </item>
+    <item nodeId="node-1009">
+        <command xml:space="preserve">look hearth</command>
+        <result xml:space="preserve">You see nothing special about the hearth.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1029">
+        <command xml:space="preserve">look at fireplace</command>
+        <result xml:space="preserve">The fire burns brightly, giving off a comforting warmth.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1030"></child>
+        </children>
+    </item>
+    <item nodeId="node-1030">
+        <command xml:space="preserve">look at hearth</command>
+        <result xml:space="preserve">The fire burns brightly, giving off a comforting warmth.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1031"></child>
+        </children>
+    </item>
+    <item nodeId="node-1031">
+        <command xml:space="preserve">take hearth</command>
+        <result xml:space="preserve">That's hardly portable.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1032"></child>
+        </children>
+    </item>
+    <item nodeId="node-1032">
+        <command xml:space="preserve">take fire</command>
+        <result xml:space="preserve">That's hardly portable.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1040">
+        <command xml:space="preserve">look at chest</command>
+        <result xml:space="preserve">It has a golden latch on the front, it looks easy to open.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1041"></child>
+            <child nodeId="node-1043"></child>
+        </children>
+    </item>
+    <item nodeId="node-1043">
+        <command xml:space="preserve">take ring</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1050"></child>
+            <child nodeId="node-1044"></child>
+        </children>
+    </item>
+    <item nodeId="node-1044">
+        <command xml:space="preserve">put right in chest</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1045"></child>
+        </children>
+    </item>
+    <item nodeId="node-1045">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Frodo's house
+You see a warm fire burning in the hearth. There is a table with some half eaten food on it. A window lets the Sun in from outside. The front door to the north, leads outside.
+
+You see a small jewel encrusted chest.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1046"></child>
+        </children>
+    </item>
+    <item nodeId="node-1046">
+        <command xml:space="preserve">take ring</command>
+        <result xml:space="preserve">You already have that.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1047"></child>
+        </children>
+    </item>
+    <item nodeId="node-1047">
+        <command xml:space="preserve">put ring in chest</command>
+        <result xml:space="preserve">You put the ring into the small jewel chest.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1050">
+        <command xml:space="preserve">ope nchest</command>
+        <result xml:space="preserve">That's not a verb I recognise.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1051"></child>
+        </children>
+    </item>
+    <item nodeId="node-1051">
+        <command xml:space="preserve">open chest</command>
+        <result xml:space="preserve">You open the small jewel chest, revealing a ring.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1052"></child>
+        </children>
+    </item>
+    <item nodeId="node-1052">
+        <command xml:space="preserve">take ring</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1053"></child>
+        </children>
+    </item>
+    <item nodeId="node-1053">
+        <command xml:space="preserve">inventory</command>
+        <result xml:space="preserve">You are carrying:
+  a ring
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1054"></child>
+        </children>
+    </item>
+    <item nodeId="node-1054">
+        <command xml:space="preserve">n</command>
+        <result xml:space="preserve">
+shire
+The sun is shining and you can hear birds in the trees. South is Frodo's house. To the west is a river.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1055"></child>
+        </children>
+    </item>
+    <item nodeId="node-1055">
+        <command xml:space="preserve">drop</command>
+        <result xml:space="preserve">(the ring)
+Dropped.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1056"></child>
+        </children>
+    </item>
+    <item nodeId="node-1056">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">shire
+The sun is shining and you can hear birds in the trees. South is Frodo's house. To the west is a river.
+
+You can see a ring here.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1057"></child>
+        </children>
+    </item>
+    <item nodeId="node-1057">
+        <command xml:space="preserve">s</command>
+        <result xml:space="preserve">
+Frodo's house
+You see a warm fire burning in the hearth. There is a table with some half eaten food on it. A window lets the Sun in from outside. The front door to the north, leads outside.
+
+You see a small jewel encrusted chest.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1058"></child>
+        </children>
+    </item>
+    <item nodeId="node-1058">
+        <command xml:space="preserve">look at ring</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1041">
+        <command xml:space="preserve">open chest</command>
+        <result xml:space="preserve">It isn't something you can open.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1101">
+        <command xml:space="preserve">look at Gandalf</command>
+        <result xml:space="preserve">He is a wizard, member of the Istari order. He is very tall and wears a large grey pointy hat and has a wooden staff.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1102"></child>
+        </children>
+    </item>
+    <item nodeId="node-1102">
+        <command xml:space="preserve">talk to gandalf</command>
+        <result xml:space="preserve">That's not a verb I recognise.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1103"></child>
+        </children>
+    </item>
+    <item nodeId="node-1103">
+        <command xml:space="preserve">ask gandalf about the ring</command>
+        <result xml:space="preserve">There is no reply.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1104"></child>
+        </children>
+    </item>
+    <item nodeId="node-1104">
+        <command xml:space="preserve">hi</command>
+        <result xml:space="preserve">That's not a verb I recognise.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1005">
+        <command xml:space="preserve">look</command>
+        <result xml:space="preserve">Frodo's house
+You see a warm fire burning in the hearth. There is a table with some half eaten food on it. A window lets the Sun in from outside. The front door to the north, leads outside.
+
+You see a small jewel encrusted chest.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1095"></child>
+        </children>
+    </item>
+    <item nodeId="node-1095">
+        <command xml:space="preserve">open chest</command>
+        <result xml:space="preserve">You open the small jewel chest, revealing a ring.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1096"></child>
+        </children>
+    </item>
+    <item nodeId="node-1096">
+        <command xml:space="preserve">take ring</command>
+        <result xml:space="preserve">Taken.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1097"></child>
+        </children>
+    </item>
+    <item nodeId="node-1097">
+        <command xml:space="preserve">look at ring</command>
+        <result xml:space="preserve">It's gold and shiny, so shiny you can't help being captivated by its beauty...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1098"></child>
+        </children>
+    </item>
+    <item nodeId="node-1098">
+        <command xml:space="preserve">throw ring into fire</command>
+        <result xml:space="preserve">You throw the ring into the fire! After a time, you notice it has not burned... but some writing has appeared on it. You use some fire tongs to remove the rings...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1099"></child>
+        </children>
+    </item>
+    <item nodeId="node-1099">
+        <command xml:space="preserve">inventory</command>
+        <result xml:space="preserve">You are carrying:
+  a ring
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1100"></child>
+        </children>
+    </item>
+    <item nodeId="node-1100">
+        <command xml:space="preserve">look at the ring</command>
+        <result xml:space="preserve">The gold and shiny ring has revealed some strang writing...
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1107">
+        <command xml:space="preserve">ask gandalf about the ring</command>
+        <result xml:space="preserve">Gandalf says: "Frodo, it is a very dangerous ring, we must dispose of it immediately."
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1108"></child>
+        </children>
+    </item>
+    <item nodeId="node-1108">
+        <command xml:space="preserve">ask gandalf about ring</command>
+        <result xml:space="preserve">Gandalf says: "Frodo, it is a very dangerous ring, we must dispose of it immediately."
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1105">
+        <command xml:space="preserve">ask gandalf about ring</command>
+        <result xml:space="preserve">Gandalf says: "Frodo, it is a very dangerous ring, we must dispose of it immediately."
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1111"></child>
+            <child nodeId="node-1106"></child>
+        </children>
+    </item>
+    <item nodeId="node-1106">
+        <command xml:space="preserve">ask gandalf about the ring</command>
+        <result xml:space="preserve">There is no reply.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+    <item nodeId="node-1111">
+        <command xml:space="preserve">ask aragorn</command>
+        <result xml:space="preserve">What do you want to ask Aragorn for?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1112"></child>
+        </children>
+    </item>
+    <item nodeId="node-1112">
+        <command xml:space="preserve">talk to aragorn</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1113"></child>
+        </children>
+    </item>
+    <item nodeId="node-1113">
+        <command xml:space="preserve">speak aragorn</command>
+        <result xml:space="preserve">Whom do you want to speak that to?
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1114"></child>
+        </children>
+    </item>
+    <item nodeId="node-1114">
+        <command xml:space="preserve">talk to gandalf</command>
+        <result xml:space="preserve">You can't see any such thing.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+        <children><child nodeId="node-1115"></child>
+        </children>
+    </item>
+    <item nodeId="node-1115">
+        <command xml:space="preserve">speak to gandalf</command>
+        <result xml:space="preserve">I didn't understand that sentence.
+
+&gt;</result>
+        <commentary xml:space="preserve"></commentary>
+    </item>
+</Skein>

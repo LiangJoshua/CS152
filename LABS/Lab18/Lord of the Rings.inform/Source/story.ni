@@ -43,7 +43,9 @@ Boromir is a man. "Bormor snickers at you and the ring."
 The description of Boromir is "A man of conceit, but commitment. Perhaps he will be useful."
 Boromir is here.
 
-Legolas is a man. "Legolas plays with his bow, bored..."
+Legolas is a man. "Legolas plays with his bow, bored... and asks if you are ready to go."
+The description of Legolas is "The best archer of Middle Earth."
+Legolas is here.
 
 The shire is west of Rivendell. "The sun is shining and you can hear birds in the trees. South is Frodo's house. To the west is a river."
 

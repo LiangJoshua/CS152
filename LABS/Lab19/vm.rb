@@ -23,6 +23,21 @@ class VirtualMachine
         # YOUR CODE HERE -- Add extra 'when' cases to handle
         # additional operations.
         #
+      when ADD_OP
+        v1 = @stack.pop
+        v2 = @stack.pop
+        @stack.push(v1 + v2)
+
+      when SUB_OP
+        v1 = @stack.pop
+        v2 = @stack.pop
+        @stack.push(v2 - v1)
+
+      when MUL_OP
+        v1 = @stack.pop
+        v2 = @stack.pop
+        @stack.push(v1 * v2)
+      
         else
           raise "Unrecognized command: '#{ln}'"
         end
@@ -40,5 +55,3 @@ source = ARGV[0]
 
 vm = VirtualMachine.new
 vm.exec(source)
-
-

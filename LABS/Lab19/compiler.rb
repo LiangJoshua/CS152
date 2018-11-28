@@ -65,7 +65,30 @@ class AST
     when 'println'
       comp_arg(@args[0], bytecode)
       bytecode.push(PRINT_OP)
-    #
+
+    when '+'
+      comp_arg(@args[0], bytecode)
+      @args.delete_at(0)
+      @args.each do |x|
+        comp_arg(x, bytecode)
+        bytecode.push(SUB_OP)
+      end
+
+    when '-'
+      comp_arg(@args[0], bytecode)
+      @args.delete_at(0)
+      @args.each do |x|
+        comp_arg(x, bytecode)
+        bytecode.push(ADD_OP)
+      end
+
+    when '*'
+      comp_arg(@args[0], bytecode)
+      @args.delete_at(0)
+      @args.each do |x|
+        comp_arg(x, bytecode)
+        bytecode.push(MUL_OP)
+      end
     # YOUR CODE HERE -- Add 'when' cases to support the other expressions.
     else
       raise "Unrecognized op '#{@op}'"
@@ -175,5 +198,3 @@ output = ARGV[1]
 
 comp = Compiler.new
 comp.compile(source, output)
-
-

@@ -18,19 +18,20 @@ public class FeatherweightJavaScriptParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__4=1, T__3=2, T__2=3, T__1=4, T__0=5, IF=6, ELSE=7, WHILE=8, FUNCTION=9, 
-		VAR=10, PRINT=11, INT=12, BOOL=13, NULL=14, MUL=15, DIV=16, ADD=17, SUB=18, 
-		MOD=19, GT=20, LT=21, GTE=22, LTE=23, EQ=24, SEPARATOR=25, ASGN=26, IDENTIFIER=27, 
-		NEWLINE=28, WS=29, LINE_COMMENT=30, BLOCK_COMMENT=31;
+		VAR=10, PRINT=11, INT=12, BOOL=13, NULL=14, MUL=15, DIV=16, SEPARATOR=17, 
+		ADD=18, SUB=19, MOD=20, GT=21, LT=22, GTE=23, LTE=24, EQ=25, ASGN=26, 
+		IDENTIFIER=27, NEWLINE=28, LINE_COMMENT=29, WS=30, BLOCK_COMMENT=31;
 	public static final String[] tokenNames = {
 		"<INVALID>", "'{'", "'}'", "'('", "')'", "','", "'if'", "'else'", "'while'", 
 		"'function'", "'var'", "'print'", "INT", "BOOL", "'null'", "'*'", "'/'", 
-		"'+'", "'-'", "'%'", "'>'", "'<'", "'>='", "'<='", "'=='", "';'", "'='", 
-		"IDENTIFIER", "NEWLINE", "WS", "LINE_COMMENT", "BLOCK_COMMENT"
+		"';'", "'+'", "'-'", "'%'", "'>'", "'<'", "'>='", "'<='", "'=='", "'='", 
+		"IDENTIFIER", "NEWLINE", "LINE_COMMENT", "WS", "BLOCK_COMMENT"
 	};
 	public static final int
-		RULE_prog = 0, RULE_stat = 1, RULE_expr = 2, RULE_block = 3;
+		RULE_prog = 0, RULE_stat = 1, RULE_expr = 2, RULE_block = 3, RULE_params = 4, 
+		RULE_args = 5;
 	public static final String[] ruleNames = {
-		"prog", "stat", "expr", "block"
+		"prog", "stat", "expr", "block", "params", "args"
 	};
 
 	@Override
@@ -77,16 +78,16 @@ public class FeatherweightJavaScriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(9); 
+			setState(13); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(8); stat();
+				setState(12); stat();
 				}
 				}
-				setState(11); 
+				setState(15); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << IF) | (1L << WHILE) | (1L << FUNCTION) | (1L << VAR) | (1L << PRINT) | (1L << INT) | (1L << BOOL) | (1L << NULL) | (1L << IDENTIFIER))) != 0) );
@@ -193,60 +194,60 @@ public class FeatherweightJavaScriptParser extends Parser {
 		StatContext _localctx = new StatContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_stat);
 		try {
-			setState(42);
+			setState(46);
 			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
 				_localctx = new BareExprContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(13); expr(0);
-				setState(14); match(SEPARATOR);
+				setState(17); expr(0);
+				setState(18); match(SEPARATOR);
 				}
 				break;
 			case 2:
 				_localctx = new IfThenElseContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(16); match(IF);
-				setState(17); match(T__2);
-				setState(18); expr(0);
-				setState(19); match(T__1);
-				setState(20); block();
-				setState(21); match(ELSE);
-				setState(22); block();
+				setState(20); match(IF);
+				setState(21); match(T__2);
+				setState(22); expr(0);
+				setState(23); match(T__1);
+				setState(24); block();
+				setState(25); match(ELSE);
+				setState(26); block();
 				}
 				break;
 			case 3:
 				_localctx = new IfThenContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(24); match(IF);
-				setState(25); match(T__2);
-				setState(26); expr(0);
-				setState(27); match(T__1);
-				setState(28); block();
+				setState(28); match(IF);
+				setState(29); match(T__2);
+				setState(30); expr(0);
+				setState(31); match(T__1);
+				setState(32); block();
 				}
 				break;
 			case 4:
 				_localctx = new WhileContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(30); match(WHILE);
-				setState(31); match(T__2);
-				setState(32); expr(0);
-				setState(33); match(T__1);
-				setState(34); block();
+				setState(34); match(WHILE);
+				setState(35); match(T__2);
+				setState(36); expr(0);
+				setState(37); match(T__1);
+				setState(38); block();
 				}
 				break;
 			case 5:
 				_localctx = new PrintContext(_localctx);
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(36); match(PRINT);
-				setState(37); match(T__2);
-				setState(38); expr(0);
-				setState(39); match(T__1);
-				setState(40); match(SEPARATOR);
+				setState(40); match(PRINT);
+				setState(41); match(T__2);
+				setState(42); expr(0);
+				setState(43); match(T__1);
+				setState(44); match(SEPARATOR);
 				}
 				break;
 			}
@@ -312,21 +313,6 @@ public class FeatherweightJavaScriptParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class ComparisonContext extends ExprContext {
-		public Token op;
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public ComparisonContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitComparison(this);
-			else return visitor.visitChildren(this);
-		}
-	}
 	public static class BoolContext extends ExprContext {
 		public TerminalNode BOOL() { return getToken(FeatherweightJavaScriptParser.BOOL, 0); }
 		public BoolContext(ExprContext ctx) { copyFrom(ctx); }
@@ -359,6 +345,36 @@ public class FeatherweightJavaScriptParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	public static class AddSubContext extends ExprContext {
+		public Token op;
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public AddSubContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitAddSub(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class ComparisonContext extends ExprContext {
+		public Token op;
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public ComparisonContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitComparison(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	public static class VarAppContext extends ExprContext {
 		public TerminalNode IDENTIFIER() { return getToken(FeatherweightJavaScriptParser.IDENTIFIER, 0); }
 		public VarAppContext(ExprContext ctx) { copyFrom(ctx); }
@@ -368,29 +384,25 @@ public class FeatherweightJavaScriptParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class FucAppContext extends ExprContext {
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
+	public static class FuncAppContext extends ExprContext {
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
 		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
+		public ArgsContext args() {
+			return getRuleContext(ArgsContext.class,0);
 		}
-		public TerminalNode IDENTIFIER() { return getToken(FeatherweightJavaScriptParser.IDENTIFIER, 0); }
-		public FucAppContext(ExprContext ctx) { copyFrom(ctx); }
+		public FuncAppContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitFucApp(this);
+			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitFuncApp(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	public static class FuncDeclContext extends ExprContext {
+		public ParamsContext params() {
+			return getRuleContext(ParamsContext.class,0);
+		}
 		public TerminalNode FUNCTION() { return getToken(FeatherweightJavaScriptParser.FUNCTION, 0); }
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
@@ -407,21 +419,6 @@ public class FeatherweightJavaScriptParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitInt(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class AddSungContext extends ExprContext {
-		public Token op;
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public AddSungContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitAddSung(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -442,18 +439,18 @@ public class FeatherweightJavaScriptParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(87);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			setState(69);
+			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 			case 1:
 				{
 				_localctx = new VarDeclContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(45); match(VAR);
-				setState(46); match(IDENTIFIER);
-				setState(47); match(ASGN);
-				setState(48); expr(5);
+				setState(49); match(VAR);
+				setState(50); match(IDENTIFIER);
+				setState(51); match(ASGN);
+				setState(52); expr(6);
 				}
 				break;
 			case 2:
@@ -461,22 +458,12 @@ public class FeatherweightJavaScriptParser extends Parser {
 				_localctx = new VarAsgnContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(49); match(IDENTIFIER);
-				setState(50); match(ASGN);
-				setState(51); expr(4);
+				setState(53); match(IDENTIFIER);
+				setState(54); match(ASGN);
+				setState(55); expr(4);
 				}
 				break;
 			case 3:
-				{
-				_localctx = new ParensContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
-				setState(52); match(T__2);
-				setState(53); expr(0);
-				setState(54); match(T__1);
-				}
-				break;
-			case 4:
 				{
 				_localctx = new IntContext(_localctx);
 				_ctx = _localctx;
@@ -484,161 +471,133 @@ public class FeatherweightJavaScriptParser extends Parser {
 				setState(56); match(INT);
 				}
 				break;
+			case 4:
+				{
+				_localctx = new ParensContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(57); match(T__2);
+				setState(58); expr(0);
+				setState(59); match(T__1);
+				}
+				break;
 			case 5:
-				{
-				_localctx = new BoolContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
-				setState(57); match(BOOL);
-				}
-				break;
-			case 6:
-				{
-				_localctx = new NullContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
-				setState(58); match(NULL);
-				}
-				break;
-			case 7:
-				{
-				_localctx = new VarAppContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
-				setState(59); match(IDENTIFIER);
-				}
-				break;
-			case 8:
 				{
 				_localctx = new FuncDeclContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(60); match(FUNCTION);
-				setState(61); match(T__2);
-				setState(63);
-				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << FUNCTION) | (1L << VAR) | (1L << INT) | (1L << BOOL) | (1L << NULL) | (1L << IDENTIFIER))) != 0)) {
-					{
-					setState(62); expr(0);
-					}
+				setState(61); match(FUNCTION);
+				setState(62); params();
+				setState(63); block();
 				}
-
-				setState(69);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while (_la==T__0) {
-					{
-					{
-					setState(65); match(T__0);
-					setState(66); expr(0);
-					}
-					}
-					setState(71);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
+				break;
+			case 6:
+				{
+				_localctx = new VarAppContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(65); match(IDENTIFIER);
 				}
-				setState(72); match(T__1);
-				setState(73); block();
+				break;
+			case 7:
+				{
+				_localctx = new IntContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(66); match(INT);
+				}
+				break;
+			case 8:
+				{
+				_localctx = new BoolContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(67); match(BOOL);
 				}
 				break;
 			case 9:
 				{
-				_localctx = new FucAppContext(_localctx);
+				_localctx = new NullContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(74); match(IDENTIFIER);
-				setState(75); match(T__2);
-				setState(77);
-				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << FUNCTION) | (1L << VAR) | (1L << INT) | (1L << BOOL) | (1L << NULL) | (1L << IDENTIFIER))) != 0)) {
-					{
-					setState(76); expr(0);
-					}
-				}
-
-				setState(83);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while (_la==T__0) {
-					{
-					{
-					setState(79); match(T__0);
-					setState(80); expr(0);
-					}
-					}
-					setState(85);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(86); match(T__1);
+				setState(68); match(NULL);
 				}
 				break;
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(100);
+			setState(84);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(98);
-					switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
+					setState(82);
+					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
 						{
 						_localctx = new MulDivModContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(89);
-						if (!(precpred(_ctx, 12))) throw new FailedPredicateException(this, "precpred(_ctx, 12)");
-						setState(90);
+						setState(71);
+						if (!(precpred(_ctx, 13))) throw new FailedPredicateException(this, "precpred(_ctx, 13)");
+						setState(72);
 						((MulDivModContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MUL) | (1L << DIV) | (1L << MOD))) != 0)) ) {
 							((MulDivModContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(91); expr(13);
+						setState(73); expr(14);
 						}
 						break;
 					case 2:
 						{
-						_localctx = new AddSungContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new AddSubContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(92);
-						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
-						setState(93);
-						((AddSungContext)_localctx).op = _input.LT(1);
+						setState(74);
+						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
+						setState(75);
+						((AddSubContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==ADD || _la==SUB) ) {
-							((AddSungContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+							((AddSubContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(94); expr(12);
+						setState(76); expr(11);
 						}
 						break;
 					case 3:
 						{
 						_localctx = new ComparisonContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(95);
-						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
-						setState(96);
+						setState(77);
+						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
+						setState(78);
 						((ComparisonContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << GT) | (1L << LT) | (1L << GTE) | (1L << LTE) | (1L << EQ))) != 0)) ) {
 							((ComparisonContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(97); expr(11);
+						setState(79); expr(10);
+						}
+						break;
+					case 4:
+						{
+						_localctx = new FuncAppContext(new ExprContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(80);
+						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
+						setState(81); args();
 						}
 						break;
 					}
 					} 
 				}
-				setState(102);
+				setState(86);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
 			}
 		}
@@ -695,27 +654,27 @@ public class FeatherweightJavaScriptParser extends Parser {
 		enterRule(_localctx, 6, RULE_block);
 		int _la;
 		try {
-			setState(112);
+			setState(96);
 			switch (_input.LA(1)) {
 			case T__4:
 				_localctx = new FullBlockContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(103); match(T__4);
-				setState(107);
+				setState(87); match(T__4);
+				setState(91);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << IF) | (1L << WHILE) | (1L << FUNCTION) | (1L << VAR) | (1L << PRINT) | (1L << INT) | (1L << BOOL) | (1L << NULL) | (1L << IDENTIFIER))) != 0)) {
 					{
 					{
-					setState(104); stat();
+					setState(88); stat();
 					}
 					}
-					setState(109);
+					setState(93);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(110); match(T__3);
+				setState(94); match(T__3);
 				}
 				break;
 			case T__2:
@@ -731,11 +690,133 @@ public class FeatherweightJavaScriptParser extends Parser {
 				_localctx = new SimpBlockContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(111); stat();
+				setState(95); stat();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ParamsContext extends ParserRuleContext {
+		public TerminalNode IDENTIFIER(int i) {
+			return getToken(FeatherweightJavaScriptParser.IDENTIFIER, i);
+		}
+		public List<TerminalNode> IDENTIFIER() { return getTokens(FeatherweightJavaScriptParser.IDENTIFIER); }
+		public ParamsContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_params; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitParams(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ParamsContext params() throws RecognitionException {
+		ParamsContext _localctx = new ParamsContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_params);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(98); match(T__2);
+			setState(107);
+			_la = _input.LA(1);
+			if (_la==IDENTIFIER) {
+				{
+				setState(99); match(IDENTIFIER);
+				setState(104);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				while (_la==T__0) {
+					{
+					{
+					setState(100); match(T__0);
+					setState(101); match(IDENTIFIER);
+					}
+					}
+					setState(106);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				}
+				}
+			}
+
+			setState(109); match(T__1);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ArgsContext extends ParserRuleContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public ArgsContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_args; }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitArgs(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ArgsContext args() throws RecognitionException {
+		ArgsContext _localctx = new ArgsContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_args);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(111); match(T__2);
+			setState(120);
+			_la = _input.LA(1);
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << FUNCTION) | (1L << VAR) | (1L << INT) | (1L << BOOL) | (1L << NULL) | (1L << IDENTIFIER))) != 0)) {
+				{
+				setState(112); expr(0);
+				setState(117);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				while (_la==T__0) {
+					{
+					{
+					setState(113); match(T__0);
+					setState(114); expr(0);
+					}
+					}
+					setState(119);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				}
+				}
+			}
+
+			setState(122); match(T__1);
 			}
 		}
 		catch (RecognitionException re) {
@@ -757,44 +838,48 @@ public class FeatherweightJavaScriptParser extends Parser {
 	}
 	private boolean expr_sempred(ExprContext _localctx, int predIndex) {
 		switch (predIndex) {
-		case 0: return precpred(_ctx, 12);
-		case 1: return precpred(_ctx, 11);
-		case 2: return precpred(_ctx, 10);
+		case 0: return precpred(_ctx, 13);
+		case 1: return precpred(_ctx, 10);
+		case 2: return precpred(_ctx, 9);
+		case 3: return precpred(_ctx, 7);
 		}
 		return true;
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3!u\4\2\t\2\4\3\t\3"+
-		"\4\4\t\4\4\5\t\5\3\2\6\2\f\n\2\r\2\16\2\r\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3!\177\4\2\t\2\4\3"+
+		"\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2\6\2\20\n\2\r\2\16\2\21\3\3\3"+
 		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
-		"\3\3\3\3\3\3\3\3\3\5\3-\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3"+
-		"\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4B\n\4\3\4\3\4\7\4F\n\4\f\4\16\4"+
-		"I\13\4\3\4\3\4\3\4\3\4\3\4\5\4P\n\4\3\4\3\4\7\4T\n\4\f\4\16\4W\13\4\3"+
-		"\4\5\4Z\n\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\7\4e\n\4\f\4\16\4h\13"+
-		"\4\3\5\3\5\7\5l\n\5\f\5\16\5o\13\5\3\5\3\5\5\5s\n\5\3\5\2\3\6\6\2\4\6"+
-		"\b\2\5\4\2\21\22\25\25\3\2\23\24\3\2\26\32\u0086\2\13\3\2\2\2\4,\3\2\2"+
-		"\2\6Y\3\2\2\2\br\3\2\2\2\n\f\5\4\3\2\13\n\3\2\2\2\f\r\3\2\2\2\r\13\3\2"+
-		"\2\2\r\16\3\2\2\2\16\3\3\2\2\2\17\20\5\6\4\2\20\21\7\33\2\2\21-\3\2\2"+
-		"\2\22\23\7\b\2\2\23\24\7\5\2\2\24\25\5\6\4\2\25\26\7\6\2\2\26\27\5\b\5"+
-		"\2\27\30\7\t\2\2\30\31\5\b\5\2\31-\3\2\2\2\32\33\7\b\2\2\33\34\7\5\2\2"+
-		"\34\35\5\6\4\2\35\36\7\6\2\2\36\37\5\b\5\2\37-\3\2\2\2 !\7\n\2\2!\"\7"+
-		"\5\2\2\"#\5\6\4\2#$\7\6\2\2$%\5\b\5\2%-\3\2\2\2&\'\7\r\2\2\'(\7\5\2\2"+
-		"()\5\6\4\2)*\7\6\2\2*+\7\33\2\2+-\3\2\2\2,\17\3\2\2\2,\22\3\2\2\2,\32"+
-		"\3\2\2\2, \3\2\2\2,&\3\2\2\2-\5\3\2\2\2./\b\4\1\2/\60\7\f\2\2\60\61\7"+
-		"\35\2\2\61\62\7\34\2\2\62Z\5\6\4\7\63\64\7\35\2\2\64\65\7\34\2\2\65Z\5"+
-		"\6\4\6\66\67\7\5\2\2\678\5\6\4\289\7\6\2\29Z\3\2\2\2:Z\7\16\2\2;Z\7\17"+
-		"\2\2<Z\7\20\2\2=Z\7\35\2\2>?\7\13\2\2?A\7\5\2\2@B\5\6\4\2A@\3\2\2\2AB"+
-		"\3\2\2\2BG\3\2\2\2CD\7\7\2\2DF\5\6\4\2EC\3\2\2\2FI\3\2\2\2GE\3\2\2\2G"+
-		"H\3\2\2\2HJ\3\2\2\2IG\3\2\2\2JK\7\6\2\2KZ\5\b\5\2LM\7\35\2\2MO\7\5\2\2"+
-		"NP\5\6\4\2ON\3\2\2\2OP\3\2\2\2PU\3\2\2\2QR\7\7\2\2RT\5\6\4\2SQ\3\2\2\2"+
-		"TW\3\2\2\2US\3\2\2\2UV\3\2\2\2VX\3\2\2\2WU\3\2\2\2XZ\7\6\2\2Y.\3\2\2\2"+
-		"Y\63\3\2\2\2Y\66\3\2\2\2Y:\3\2\2\2Y;\3\2\2\2Y<\3\2\2\2Y=\3\2\2\2Y>\3\2"+
-		"\2\2YL\3\2\2\2Zf\3\2\2\2[\\\f\16\2\2\\]\t\2\2\2]e\5\6\4\17^_\f\r\2\2_"+
-		"`\t\3\2\2`e\5\6\4\16ab\f\f\2\2bc\t\4\2\2ce\5\6\4\rd[\3\2\2\2d^\3\2\2\2"+
-		"da\3\2\2\2eh\3\2\2\2fd\3\2\2\2fg\3\2\2\2g\7\3\2\2\2hf\3\2\2\2im\7\3\2"+
-		"\2jl\5\4\3\2kj\3\2\2\2lo\3\2\2\2mk\3\2\2\2mn\3\2\2\2np\3\2\2\2om\3\2\2"+
-		"\2ps\7\4\2\2qs\5\4\3\2ri\3\2\2\2rq\3\2\2\2s\t\3\2\2\2\r\r,AGOUYdfmr";
+		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\61\n\3\3\4\3\4\3\4\3\4\3"+
+		"\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4"+
+		"H\n\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\7\4U\n\4\f\4\16\4X\13"+
+		"\4\3\5\3\5\7\5\\\n\5\f\5\16\5_\13\5\3\5\3\5\5\5c\n\5\3\6\3\6\3\6\3\6\7"+
+		"\6i\n\6\f\6\16\6l\13\6\5\6n\n\6\3\6\3\6\3\7\3\7\3\7\3\7\7\7v\n\7\f\7\16"+
+		"\7y\13\7\5\7{\n\7\3\7\3\7\3\7\2\3\6\b\2\4\6\b\n\f\2\5\4\2\21\22\26\26"+
+		"\3\2\24\25\3\2\27\33\u008f\2\17\3\2\2\2\4\60\3\2\2\2\6G\3\2\2\2\bb\3\2"+
+		"\2\2\nd\3\2\2\2\fq\3\2\2\2\16\20\5\4\3\2\17\16\3\2\2\2\20\21\3\2\2\2\21"+
+		"\17\3\2\2\2\21\22\3\2\2\2\22\3\3\2\2\2\23\24\5\6\4\2\24\25\7\23\2\2\25"+
+		"\61\3\2\2\2\26\27\7\b\2\2\27\30\7\5\2\2\30\31\5\6\4\2\31\32\7\6\2\2\32"+
+		"\33\5\b\5\2\33\34\7\t\2\2\34\35\5\b\5\2\35\61\3\2\2\2\36\37\7\b\2\2\37"+
+		" \7\5\2\2 !\5\6\4\2!\"\7\6\2\2\"#\5\b\5\2#\61\3\2\2\2$%\7\n\2\2%&\7\5"+
+		"\2\2&\'\5\6\4\2\'(\7\6\2\2()\5\b\5\2)\61\3\2\2\2*+\7\r\2\2+,\7\5\2\2,"+
+		"-\5\6\4\2-.\7\6\2\2./\7\23\2\2/\61\3\2\2\2\60\23\3\2\2\2\60\26\3\2\2\2"+
+		"\60\36\3\2\2\2\60$\3\2\2\2\60*\3\2\2\2\61\5\3\2\2\2\62\63\b\4\1\2\63\64"+
+		"\7\f\2\2\64\65\7\35\2\2\65\66\7\34\2\2\66H\5\6\4\b\678\7\35\2\289\7\34"+
+		"\2\29H\5\6\4\6:H\7\16\2\2;<\7\5\2\2<=\5\6\4\2=>\7\6\2\2>H\3\2\2\2?@\7"+
+		"\13\2\2@A\5\n\6\2AB\5\b\5\2BH\3\2\2\2CH\7\35\2\2DH\7\16\2\2EH\7\17\2\2"+
+		"FH\7\20\2\2G\62\3\2\2\2G\67\3\2\2\2G:\3\2\2\2G;\3\2\2\2G?\3\2\2\2GC\3"+
+		"\2\2\2GD\3\2\2\2GE\3\2\2\2GF\3\2\2\2HV\3\2\2\2IJ\f\17\2\2JK\t\2\2\2KU"+
+		"\5\6\4\20LM\f\f\2\2MN\t\3\2\2NU\5\6\4\rOP\f\13\2\2PQ\t\4\2\2QU\5\6\4\f"+
+		"RS\f\t\2\2SU\5\f\7\2TI\3\2\2\2TL\3\2\2\2TO\3\2\2\2TR\3\2\2\2UX\3\2\2\2"+
+		"VT\3\2\2\2VW\3\2\2\2W\7\3\2\2\2XV\3\2\2\2Y]\7\3\2\2Z\\\5\4\3\2[Z\3\2\2"+
+		"\2\\_\3\2\2\2][\3\2\2\2]^\3\2\2\2^`\3\2\2\2_]\3\2\2\2`c\7\4\2\2ac\5\4"+
+		"\3\2bY\3\2\2\2ba\3\2\2\2c\t\3\2\2\2dm\7\5\2\2ej\7\35\2\2fg\7\7\2\2gi\7"+
+		"\35\2\2hf\3\2\2\2il\3\2\2\2jh\3\2\2\2jk\3\2\2\2kn\3\2\2\2lj\3\2\2\2me"+
+		"\3\2\2\2mn\3\2\2\2no\3\2\2\2op\7\6\2\2p\13\3\2\2\2qz\7\5\2\2rw\5\6\4\2"+
+		"st\7\7\2\2tv\5\6\4\2us\3\2\2\2vy\3\2\2\2wu\3\2\2\2wx\3\2\2\2x{\3\2\2\2"+
+		"yw\3\2\2\2zr\3\2\2\2z{\3\2\2\2{|\3\2\2\2|}\7\6\2\2}\r\3\2\2\2\r\21\60"+
+		"GTV]bjmwz";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

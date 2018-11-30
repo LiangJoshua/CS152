@@ -1,1 +1,0 @@
-(prog (stat (expr var makeCounter = (expr function ( ) (block { (stat (expr var i = (expr 0)) ;) (stat (expr function ( ) (block { (stat (expr i = (expr (expr i) + (expr 1))) ;) })) ;) }))) ;) (stat (expr var ctr = (expr makeCounter ( ))) ;) (stat print ( (expr ctr ( )) ) ;) (stat print ( (expr ctr ( )) ) ;) (stat print ( (expr ctr ( )) ) ;) (stat print ( (expr ctr ( )) ) ;))

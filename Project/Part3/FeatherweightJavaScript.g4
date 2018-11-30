@@ -6,44 +6,44 @@ grammar FeatherweightJavaScript;
 // Reserved words
 IF        : 'if' ;
 ELSE      : 'else' ;
-WHILE     : 'while' ;
+WHILE	  : 'while' ;
 FUNCTION  : 'function' ;
-VAR       : 'var' ;
-PRINT     : 'print' ;
+VAR	  : 'var' ;
+PRINT 	  : 'print' ;
 
 // Literals
 INT       : [1-9][0-9]* | '0' ;
-BOOL      : ('true' | 'false');
-NULL      : 'null';
+BOOL	  : ('true' | 'false');
+NULL	  : 'null';
 
 // Symbols
 MUL       : '*' ;
 DIV       : '/' ;
-ADD       : '+' ;
-SUB       : '-' ;
-MOD       : '%' ;
-
-// Comparison
-GT        : '>' ;
-LT        : '<' ;
-GTE       : '>=';
-LTE       : '<=';
-EQ        : '==';
-
 SEPARATOR : ';' ;
+ADD	  : '+' ;
+SUB	  : '-' ;
+MOD	  : '%' ;
+GT	  : '>' ;
+LT 	  : '<' ;
+GTE	  : '>=';
+LTE	  : '<=';
+EQ	  : '==';
 
-// Variable stuff
-ASGN       : '=' ;
-IDENTIFIER : ([a-zA-Z] | '_') ([a-zA-Z0-9] | '_')* ; // TODO test this
+ASGN	  : '=' ;
+IDENTIFIER: [a-zA-Z_][a-zA-Z_0-9]*;
+
+
+
+
+
 
 // Whitespace and comments
-NEWLINE       : '\r'? '\n' -> skip ;
-WS            : [ \t]+ -> skip ; // ignore whitespace
+NEWLINE   : '\r'? '\n' -> skip ;
 LINE_COMMENT  : '//' ~[\n\r]* -> skip ;
+WS            : [ \t]+ -> skip ; // ignore whitespace
 BLOCK_COMMENT : '/*' .*? '*/' -> skip ;
 
-
-// ***Parsing rules ***
+// ***Paring rules ***
 
 /** The start rule */
 prog: stat+ ;
@@ -51,24 +51,29 @@ prog: stat+ ;
 stat: expr SEPARATOR                                    # bareExpr
     | IF '(' expr ')' block ELSE block                  # ifThenElse
     | IF '(' expr ')' block                             # ifThen
-    | WHILE '(' expr ')' block                          # while
-    | PRINT '(' expr ')' SEPARATOR                      # print
+    | WHILE '(' expr ')' block				# while
+    | PRINT '(' expr ')' SEPARATOR			# print
     ;
 
 expr: expr op=( '*' | '/' | '%' ) expr                  # MulDivMod
-    | expr op=( '+' | '-' ) expr                        # AddSung
-    | expr op=( '>' | '<' | '>=' | '<=' | '==' ) expr   # comparison
+    | INT                                               # int
     | '(' expr ')'                                      # parens
+    | expr op=( '+' | '-' ) expr                        # AddSub
+    | expr op=( '>' | '<' | '>=' | '<=' | '==' ) expr   # Comparison
+    | FUNCTION params block        			# FuncDecl
+    | expr args         				# FuncApp
+    | VAR IDENTIFIER ASGN expr                          # VarDecl
+    | IDENTIFIER                                        # VarApp
+    | IDENTIFIER ASGN expr                              # VarAsgn
     | INT                                               # int
     | BOOL                                              # bool
     | NULL                                              # null
-    | VAR IDENTIFIER ASGN expr                          # VarDecl
-    | IDENTIFIER ASGN expr                              # VarAsgn
-    | IDENTIFIER                                        # VarApp
-    | FUNCTION '(' (expr)? (',' expr)* ')' block        # FuncDecl
-    | IDENTIFIER '(' (expr)? (',' expr)* ')'            # FucApp
     ;
 
 block: '{' stat* '}'                                    # fullBlock
-    | stat                                              # simpBlock
-    ;
+     | stat                                             # simpBlock
+     ;
+
+params: '(' (IDENTIFIER (',' IDENTIFIER)* )? ')' ;
+
+args: '(' (expr (',' expr)* )? ')' ;

@@ -13,7 +13,7 @@ class Record
   end
 
   def set_property name, value
-    @fields[name] = value
+    @fields[name] = value if not (name.tainted? or value.tainted?)
   end
   def get_property name
     @fields[name]
@@ -26,5 +26,3 @@ r.set_property 'lname', 'Smith'.taint
 
 p r.get_property 'profession'
 p r.get_property 'lname'
-
-

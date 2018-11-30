@@ -6,7 +6,7 @@ grammar FeatherweightJavaScript;
 // Reserved words
 IF        : 'if' ;
 ELSE      : 'else' ;
-WHITE	  : 'while' ;
+WHILE	  : 'while' ;
 FUNCTION  : 'function' ;
 VAR	  : 'var' ;
 PRINT 	  : 'print' ;

@@ -19,12 +19,19 @@ public interface FeatherweightJavaScriptVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSimpBlock(@NotNull FeatherweightJavaScriptParser.SimpBlockContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code parens}
+	 * Visit a parse tree produced by the {@code Call}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParens(@NotNull FeatherweightJavaScriptParser.ParensContext ctx);
+	T visitCall(@NotNull FeatherweightJavaScriptParser.CallContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Null}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNull(@NotNull FeatherweightJavaScriptParser.NullContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code VarAsgn}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
@@ -32,13 +39,6 @@ public interface FeatherweightJavaScriptVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitVarAsgn(@NotNull FeatherweightJavaScriptParser.VarAsgnContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code bool}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBool(@NotNull FeatherweightJavaScriptParser.BoolContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ifThenElse}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#stat}.
@@ -54,12 +54,12 @@ public interface FeatherweightJavaScriptVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAddSub(@NotNull FeatherweightJavaScriptParser.AddSubContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code FuncApp}
+	 * Visit a parse tree produced by the {@code Parens}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFuncApp(@NotNull FeatherweightJavaScriptParser.FuncAppContext ctx);
+	T visitParens(@NotNull FeatherweightJavaScriptParser.ParensContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ifThen}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#stat}.
@@ -75,19 +75,13 @@ public interface FeatherweightJavaScriptVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitWhile(@NotNull FeatherweightJavaScriptParser.WhileContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link FeatherweightJavaScriptParser#params}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParams(@NotNull FeatherweightJavaScriptParser.ParamsContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link FeatherweightJavaScriptParser#prog}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitProg(@NotNull FeatherweightJavaScriptParser.ProgContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code int}
+	 * Visit a parse tree produced by the {@code Int}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -108,12 +102,6 @@ public interface FeatherweightJavaScriptVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFullBlock(@NotNull FeatherweightJavaScriptParser.FullBlockContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link FeatherweightJavaScriptParser#args}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitArgs(@NotNull FeatherweightJavaScriptParser.ArgsContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code print}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#stat}.
 	 * @param ctx the parse tree
@@ -128,19 +116,19 @@ public interface FeatherweightJavaScriptVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMulDivMod(@NotNull FeatherweightJavaScriptParser.MulDivModContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code null}
-	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNull(@NotNull FeatherweightJavaScriptParser.NullContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code VarDecl}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitVarDecl(@NotNull FeatherweightJavaScriptParser.VarDeclContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Bool}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBool(@NotNull FeatherweightJavaScriptParser.BoolContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Comparison}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
@@ -149,12 +137,31 @@ public interface FeatherweightJavaScriptVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitComparison(@NotNull FeatherweightJavaScriptParser.ComparisonContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code SecondFuncDecl}
+	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSecondFuncDecl(@NotNull FeatherweightJavaScriptParser.SecondFuncDeclContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code VarApp}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitVarApp(@NotNull FeatherweightJavaScriptParser.VarAppContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link FeatherweightJavaScriptParser#arglist}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArglist(@NotNull FeatherweightJavaScriptParser.ArglistContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link FeatherweightJavaScriptParser#idlist}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIdlist(@NotNull FeatherweightJavaScriptParser.IdlistContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code FuncDecl}
 	 * labeled alternative in {@link FeatherweightJavaScriptParser#expr}.

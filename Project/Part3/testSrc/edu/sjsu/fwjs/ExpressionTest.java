@@ -16,7 +16,7 @@ public class ExpressionTest {
         IntVal i = (IntVal) ve.evaluate(env);
         assertEquals(i.toInt(), 3);
     }
-    
+
     @Test
     public void testVarExpr() {
         Environment env = new Environment();
@@ -25,7 +25,7 @@ public class ExpressionTest {
         Expression e = new VarExpr("x");
         assertEquals(e.evaluate(env), v);
     }
-    
+
     @Test
     public void testVarNotFoundExpr() {
         Environment env = new Environment();
@@ -34,7 +34,7 @@ public class ExpressionTest {
         Expression e = new VarExpr("y");
         assertEquals(e.evaluate(env), new NullVal());
     }
-    
+
     @Test
     public void testIfTrueExpr() {
         Environment env = new Environment();
@@ -44,7 +44,7 @@ public class ExpressionTest {
         IntVal iv = (IntVal) ife.evaluate(env);
         assertEquals(iv.toInt(), 1);
     }
-    
+
     @Test
     public void testIfFalseExpr() {
         Environment env = new Environment();
@@ -54,7 +54,7 @@ public class ExpressionTest {
         IntVal iv = (IntVal) ife.evaluate(env);
         assertEquals(iv.toInt(), 2);
     }
-    
+
     @Test
     public void testBadIfExpr() {
         Environment env = new Environment();
@@ -66,7 +66,7 @@ public class ExpressionTest {
             fail();
         } catch (Exception e) {}
     }
-    
+
     @Test
     public void testAssignExpr() {
         Environment env = new Environment();
@@ -76,7 +76,7 @@ public class ExpressionTest {
         assertEquals(iv, inVal);
         assertEquals(env.resolveVar("x"), inVal);
     }
-    
+
     @Test
     public void testBinOpExpr() {
         Environment env = new Environment();
@@ -86,7 +86,7 @@ public class ExpressionTest {
         IntVal iv = (IntVal) boe.evaluate(env);
         assertEquals(iv, new IntVal(3));
     }
-    
+
     @Test
     public void testSeqExpr() {
         Environment env = new Environment();
@@ -96,7 +96,7 @@ public class ExpressionTest {
                         new ValueExpr(new IntVal(3))));
         assertEquals(se.evaluate(env), new IntVal(6));
     }
-    
+
     @Test
     public void testWhileExpr() {
         Environment env = new Environment();
@@ -111,7 +111,7 @@ public class ExpressionTest {
         we.evaluate(env);
         assertEquals(new IntVal(0), env.resolveVar("x"));
     }
-    
+
     @Test
     // (function(x) { x; })(321);
     public void testIdFunction() {
@@ -124,7 +124,7 @@ public class ExpressionTest {
         FunctionAppExpr app = new FunctionAppExpr(f,args);
         assertEquals(new IntVal(321), app.evaluate(env));
     }
-    
+
     @Test
     // (function(x,y) { x / y; })(8,2);
     public void testDivFunction() {
@@ -142,7 +142,7 @@ public class ExpressionTest {
         FunctionAppExpr app = new FunctionAppExpr(f,args);
         assertEquals(new IntVal(4), app.evaluate(env));
     }
-    
+
     @Test
     // x=112358; (function() { x; })();
     public void testOuterScope() {
@@ -154,7 +154,7 @@ public class ExpressionTest {
         Value v = seq.evaluate(env);
         assertEquals(new IntVal(112358), v);
     }
-    
+
     @Test
     // x=112358; (function() { var x=42; x; })();
     public void testScope() {
@@ -167,7 +167,7 @@ public class ExpressionTest {
         Value v = seq.evaluate(env);
         assertEquals(new IntVal(42), v);
     }
-    
+
     @Test
     // x=112358; (function() { var x=42; x; })(); x;
     public void testScope2() {
@@ -182,7 +182,7 @@ public class ExpressionTest {
         Value v = seq.evaluate(env);
         assertEquals(new IntVal(112358), v);
     }
-    
+
     @Test
     // x=112358; (function() { x=42; x; })(); x;
     public void testScope3() {
@@ -197,7 +197,7 @@ public class ExpressionTest {
         Value v = seq.evaluate(env);
         assertEquals(new IntVal(42), v);
     }
-    
+
     @Test
     // var x=99; var x=99;  /* should throw an error */
     public void testVarDecl() {

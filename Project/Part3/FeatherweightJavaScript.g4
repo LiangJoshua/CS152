@@ -56,24 +56,24 @@ stat: expr SEPARATOR                                    # bareExpr
     ;
 
 expr: expr op=( '*' | '/' | '%' ) expr                  # MulDivMod
-    | INT                                               # int
-    | '(' expr ')'                                      # parens
+    | '(' expr ')'                                      # Parens
+    | expr '(' arglist? ')'                             # Call
     | expr op=( '+' | '-' ) expr                        # AddSub
     | expr op=( '>' | '<' | '>=' | '<=' | '==' ) expr   # Comparison
-    | FUNCTION params block        			# FuncDecl
-    | expr args         				# FuncApp
+    | FUNCTION IDENTIFIER '(' idlist? ')' block        	# FuncDecl
+    | FUNCTION '(' idlist? ')' block			# SecondFuncDecl
     | VAR IDENTIFIER ASGN expr                          # VarDecl
     | IDENTIFIER                                        # VarApp
     | IDENTIFIER ASGN expr                              # VarAsgn
-    | INT                                               # int
-    | BOOL                                              # bool
-    | NULL                                              # null
+    | INT                                               # Int
+    | BOOL                                              # Bool
+    | NULL                                              # Null
     ;
 
 block: '{' stat* '}'                                    # fullBlock
      | stat                                             # simpBlock
      ;
 
-params: '(' (IDENTIFIER (',' IDENTIFIER)* )? ')' ;
+arglist: expr (',' expr)*;
 
-args: '(' (expr (',' expr)* )? ')' ;
+idlist: IDENTIFIER (',' IDENTIFIER)*;

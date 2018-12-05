@@ -1,4 +1,4 @@
-[{
-	"keys" : ["super+shift+r"],
-	"command" : "rot13"
-}]
+[
+	{ "keys": ["super+shift+r"], "command" : "rot13" },
+	{ "keys": ["control+shift+e"], "command": "byco" },
+]

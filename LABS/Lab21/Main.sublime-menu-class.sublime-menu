@@ -1,0 +1,14 @@
+[{
+	"id" : "sjsuTestApp1",
+	"caption" : "First Example",
+	"children" : [
+		{
+			"caption" : "Encode Rot13",
+			"command" : "rot13"
+		},
+		{
+			"caption" : "Duplicate Line",
+			"command" : "duplicate"
+		}
+	]
+}]
